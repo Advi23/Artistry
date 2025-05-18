@@ -1,4 +1,6 @@
-# This file is all about my process transferring my work from Apache Netbeans to Github
+# GitHub Setup
+
+This file is all about my process transferring my work from Apache Netbeans to GitHub
 
 My first step was going to the internet, since I had 0 experiences with transferring files to GitHub before.
 I already had an account, but that was mostly for exploring and some small projects I made over the summer.
