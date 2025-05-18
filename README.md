@@ -1,6 +1,6 @@
 # _Artistry_
 
-Welcome! **_Artistry_** is an educational and recreational app designed to promote deeper knowledge in art history. 
+Welcome! **_Artistry_** is an educational and recreational app built in Java designed to promote deeper knowledge in art history. 
 
 # Features
 
