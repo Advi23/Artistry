@@ -16,11 +16,6 @@
             <artifactId>json</artifactId>
             <version>20250107</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.sedona</groupId>
-            <artifactId>sedona-viz-3.0_2.12</artifactId>
-            <version>1.4.1</version>
-        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
