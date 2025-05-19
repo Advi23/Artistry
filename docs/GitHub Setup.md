@@ -13,14 +13,25 @@ I ran into a big issue when entering my username and password. Whenever I submit
 
 However, for some reason I started getting a new message (403 error) after creating my [fine grained PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) and finally gave up, choosing to use SSH to authenticate instead. I was also just using my terminal at this point because Netbeans was not cooperating.
 
-[This GitHub doc](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) helped with that process, and along the way I also needed to relearn some of my 'terminal-navigation' phrases.
+[This GitHub doc](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) helped with that process, and along the way I also needed to relearn some of my 'terminal-navigation' phrases:
 
-After about an hour (an embarassingly long time ;_;), I finally had transferred all my files to my new GitHub repo!! I just quickly added a license to my master branch (my preferred default instead of main), and [set up my readmes](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). 
+```
+ssh-keygen -t ed25519 -C "my_email"
+**pressed enter for everything (not recommended, but I was at my limit at this point)**
+cat ~/.ssh/id_ed25519.pub
 
-The most satisfying part was closing all the docs, stackoverflow, and google queries I had open.
+```
 
+After about an hour (an embarassingly long time ;_;), I finally transferred all my files to my new GitHub repo!! I just quickly added a license to my master branch (my preferred default instead of main), and [set up my readmes](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). 
 
+When I needed to commit new code after debugging or adding new features, I used these commands in my terminal:
 
+```
+git pull origin master --rebase
+git push origin master
+
+```
+The first command fetches the latest version of my code from GitHub and reapplies my latest changes on top. This is a safer and cleaner approach than using merge.
 
 
 
