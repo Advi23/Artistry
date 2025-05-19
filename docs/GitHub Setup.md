@@ -17,7 +17,7 @@ However, for some reason I started getting a new message (403 error) after creat
 
 ```
 ssh-keygen -t ed25519 -C "my_email"
-**pressed enter for everything (not recommended, but I was at my limit at this point)**
+** pressed enter for everything (not recommended as I skipped the passphrase, but I was at my limit at this point) **
 cat ~/.ssh/id_ed25519.pub
 
 ```
