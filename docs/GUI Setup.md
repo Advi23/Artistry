@@ -1,5 +1,25 @@
 # GUI Setup
 
-This file covers my process creating the GUI for _Artistry_.
+This file covers my process setting up the GUI for _Artistry_.
 
-As I was a beginner developer while making this project, I chose to create my GUI entirely using Netbeans' interface. For my next Java project, I would likely 
+As I was a beginner developer while making this project, I chose to create my GUI entirely using Netbeans' interface. For my next Java project, I would likely use code, as that option allows for a lot more customizability. It's also easier to fix your mistakes. 
+
+I started building my GUI a bit overzealously, and this lack of a plan created lots of problems later on. 
+
+I started farily simple, creating a JFrame Form titled 'MainWindow'. This would be the base of my GUI. 
+
+I would say the most important component in a Netbeans GUI is what layout you make your panels in. At the beginning, I didn't even know that there _were_ different layouts, so I just used the standard one: **Free Design**.
+
+I began piecing together the welcome screen for my app, but issues arose when I needed to move screens. Once the user is done selecting their desired options, they're supposed to move to a Main Screen that features results, right? Well, with the **Free Design** layout, that can't be easily achieved. 
+
+Originally I just used **Tabbed Panes** to switch between screens, but I really wanted the design of my app to closely resemble my prototype (made in Canva), so I looked to the internet for solutions.
+
+This was where I realized **Free Design** was not going to work as I couldn't switch between panels easily within a single JFrame. I ended up having to scrap my first GUI and start an entirely new project, which is why it's called **artistry2** :'). 
+
+The second time, I planned everything out on paper, and I knew the first step would be to figure out what layout I needed. 
+
+A **Card Layout** looked to offer all the functionalities I needed, and this Youtube tutorial was extremely helpful in learning the setup process and basic techniques.
+
+
+
+
