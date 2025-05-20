@@ -8,12 +8,15 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -1053,76 +1056,89 @@ public class MainWindow extends javax.swing.JFrame {
             checkBoxesFilled -= 1;
         }
     }
+    
     private void checkBox_ArchitectureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_ArchitectureActionPerformed
         
         chooseFilter(checkBox_Architecture, "architecture");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_ArchitectureActionPerformed
 
     private void checkBox_AncientGreeceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_AncientGreeceActionPerformed
 
         chooseFilter(checkBox_AncientGreece, "arts-of-greece-rome-and-byzantium");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_AncientGreeceActionPerformed
 
     private void checkBox_AmericasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_AmericasActionPerformed
         
         chooseFilter(checkBox_Americas, "arts-of-the-americas");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_AmericasActionPerformed
 
     private void checkBox_ModernismActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_ModernismActionPerformed
 
         chooseFilter(checkBox_Modernism, "modernism");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_ModernismActionPerformed
 
     private void checkBox_ImpressionismActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_ImpressionismActionPerformed
 
         chooseFilter(checkBox_Impressionism, "impressionism");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_ImpressionismActionPerformed
 
     private void checkBox_AsiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_AsiaActionPerformed
 
         chooseFilter(checkBox_Asia, "arts-of-asia");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_AsiaActionPerformed
 
     private void checkBox_AnimalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_AnimalsActionPerformed
 
         chooseFilter(checkBox_Animals, "animals");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_AnimalsActionPerformed
 
     private void checkBox_PopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_PopActionPerformed
 
         chooseFilter(checkBox_Pop, "pop");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_PopActionPerformed
 
     private void checkBox_PhotographyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_PhotographyActionPerformed
 
         chooseFilter(checkBox_Photography, "photography");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_PhotographyActionPerformed
 
     private void checkBox_AfricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_AfricaActionPerformed
 
         chooseFilter(checkBox_Africa, "arts-of-africa");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_AfricaActionPerformed
 
     private void checkBox_LandscapesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_LandscapesActionPerformed
 
         chooseFilter(checkBox_Landscapes, "landscapes");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_LandscapesActionPerformed
 
     private void checkBox_MiniatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBox_MiniatureActionPerformed
 
         chooseFilter(checkBox_Miniature, "miniature");
         maxBoxes();
+        
     }//GEN-LAST:event_checkBox_MiniatureActionPerformed
 
     private void button_ProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ProceedActionPerformed
@@ -1131,6 +1147,14 @@ public class MainWindow extends javax.swing.JFrame {
         if (checkBoxesFilled != 0 && checkBoxesFilled <= 5) {
 
             changePanel(panel_base, panel_mainScreen);
+            
+            TreeMap things = userSelection.getFilters();
+            Collection values = things.values();
+            ArrayList<String> value = new ArrayList<>(values);
+            
+            for (String filter : value) {
+                System.out.println(filter);
+            }
             
             dh.compileArtworks(userSelection);
             artworks = dh.getArtworkList();
@@ -1189,6 +1213,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
 
     }
+    
     private void button_InstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_InstructionsActionPerformed
         // TODO add your handling code here:
         changePanel(panel_base, panel_Instructions);
@@ -1204,6 +1229,12 @@ public class MainWindow extends javax.swing.JFrame {
         
         changePanel(panel_base, panel_welcome);
         
+        resetInformation();
+
+    }//GEN-LAST:event_button_regenerateActionPerformed
+
+    private void resetInformation() {
+        
         for (JCheckBox checkbox : checkboxes) {
             if (checkbox.isSelected()) {
                 checkbox.setSelected(false);
@@ -1213,16 +1244,17 @@ public class MainWindow extends javax.swing.JFrame {
         checkBoxesFilled = 0;
         label_counter.setText("You have selected " + checkBoxesFilled + " out of 5 available options");
         userSelection.clearFilters();
-        //artworks
-
-    }//GEN-LAST:event_button_regenerateActionPerformed
-
+        artworks.clear();
+        
+        imagePanels.clear();
+        imageLabels.clear();
+        
+    }
     private void button_backToMain1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_backToMain1ActionPerformed
         // TODO add your handling code here:
         changePanel(panel_base, panel_mainScreen);
     }//GEN-LAST:event_button_backToMain1ActionPerformed
 
-    
     private void button_miniQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_miniQuizActionPerformed
         // TODO add your handling code here:
         changePanel(panel_base, panel_quiz);
@@ -1248,43 +1280,29 @@ public class MainWindow extends javax.swing.JFrame {
             
             (options.get(i)).setText(questions1.get(i));
         }
-        
-        
+
     }//GEN-LAST:event_button_miniQuizActionPerformed
 
     private void button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_NextActionPerformed
         // TODO add your handling code here:
         countClicks += 1;
-        if (countClicks >= imagePanels.size()) {
-            countClicks = 0;
-        }
-        if (countClicks < 0) {
-            countClicks = imagePanels.size();
-        }
         
-        int beforeCount = countClicks - 1;
-        if (beforeCount < 0) {
-            beforeCount = imagePanels.size() - 1;
-        }
-        
-        int afterCount = countClicks + 1;
-        if (afterCount >= imagePanels.size()) {
-            afterCount = 0;
-        }
-        
-        ((ImagePanel)panel_ImageView1).updateImage(imagePanels.get(beforeCount));
-        ((ImagePanel)panel_ImageView2).updateImage(imagePanels.get(countClicks));
-        ((ImagePanel)panel_ImageView3).updateImage(imagePanels.get(afterCount));
-        
-        label_LabelView1.setText(imageLabels.get(beforeCount));
-        label_LabelView2.setText(imageLabels.get(countClicks));
-        label_LabelView3.setText(imageLabels.get(afterCount));
+        photoCarousel(panel_ImageView1, panel_ImageView2, panel_ImageView3,
+                label_LabelView1, label_LabelView2, label_LabelView3);
         
     }//GEN-LAST:event_button_NextActionPerformed
 
     private void button_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_BackActionPerformed
         // TODO add your handling code here:
         countClicks -= 1;
+        
+        photoCarousel(panel_ImageView1, panel_ImageView2, panel_ImageView3,
+                label_LabelView1, label_LabelView2, label_LabelView3);
+    }//GEN-LAST:event_button_BackActionPerformed
+
+    private void photoCarousel(JPanel panel1, JPanel panel2, JPanel panel3, 
+            JLabel label1, JLabel label2, JLabel label3) {
+        
         if (countClicks > imagePanels.size() - 1) {
             countClicks = 0;
         }
@@ -1302,15 +1320,15 @@ public class MainWindow extends javax.swing.JFrame {
             afterCount = 0;
         }
         
-        ((ImagePanel)panel_ImageView1).updateImage(imagePanels.get(beforeCount));
-        ((ImagePanel)panel_ImageView2).updateImage(imagePanels.get(countClicks));
-        ((ImagePanel)panel_ImageView3).updateImage(imagePanels.get(afterCount));
+        ((ImagePanel)panel1).updateImage(imagePanels.get(beforeCount));
+        ((ImagePanel)panel2).updateImage(imagePanels.get(countClicks));
+        ((ImagePanel)panel3).updateImage(imagePanels.get(afterCount));
         
-        label_LabelView1.setText(imageLabels.get(beforeCount));
-        label_LabelView2.setText(imageLabels.get(countClicks));
-        label_LabelView3.setText(imageLabels.get(afterCount));
-    }//GEN-LAST:event_button_BackActionPerformed
-
+        label1.setText(imageLabels.get(beforeCount));
+        label2.setText(imageLabels.get(countClicks));
+        label3.setText(imageLabels.get(afterCount));  
+    }
+    
     private void radioButton_answer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radioButton_answer2ActionPerformed

@@ -173,6 +173,7 @@ public class DataHandler {
         }
     }
     
+    
     public ArrayList<Artwork> getArtworkList() {
         return artworkList;
     }
