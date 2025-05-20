@@ -6,7 +6,7 @@ As I was a beginner developer while making this project, I chose to create my GU
 
 I started building my GUI a bit overzealously, and this lack of a plan created lots of problems later on. 
 
-I started farily simple, creating a JFrame Form titled 'MainWindow'. This would be the base of my GUI. 
+I began by creating a JFrame Form titled 'MainWindow'. This would be the base of my GUI. 
 
 I would say the most important component in a Netbeans GUI is what layout you make your panels in. At the beginning, I didn't even know that there _were_ different layouts, so I just used the standard one: **Free Design**.
 
@@ -18,7 +18,11 @@ This was where I realized **Free Design** was not going to work as I couldn't sw
 
 The second time, I planned everything out on paper, and I knew the first step would be to figure out what layout I needed. 
 
-A **Card Layout** looked to offer all the functionalities I needed, and this Youtube tutorial was extremely helpful in learning the setup process and basic techniques.
+A **Card Layout** looked to offer all the functionalities I needed, and this [Youtube tutorial](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DL-UPOw1nHCI&ved=2ahUKEwiWsaKL1rKNAxVSL9AFHWNIIQcQwqsBegQIDRAG&usg=AOvVaw2q6cIksdhkMfMWpQO0JV1f) was extremely helpful in learning the setup process and basic techniques.
+
+With this layout, you need to have a base panel that serves as your starting point. From there, you can nest all the different panels that you want to switch between. My setup looked like:
+
+![Screenshot of Netbeans CardLayout]
 
 
 
