@@ -22,7 +22,7 @@ A **Card Layout** looked to offer all the functionalities I needed, and this [Yo
 
 With this layout, you need to have a base panel that serves as your starting point. From there, you can nest all the different panels that you want to switch between. My setup looked like:
 
-![Screenshot of Netbeans CardLayout](/../master/images/CardLayout.png)<img src="/../master/images/CardLayout.png" width="100">
+![Screenshot of Netbeans CardLayout]<img src="/../master/images/CardLayout.png" width="500">
 
 
 
