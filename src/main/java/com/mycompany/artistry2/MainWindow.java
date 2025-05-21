@@ -1257,6 +1257,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void button_miniQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_miniQuizActionPerformed
         // TODO add your handling code here:
+        
         changePanel(panel_base, panel_quiz);
         qe = new QuizEvaluator(artworks);
         
