@@ -22,7 +22,7 @@ A **Card Layout** looked to offer all the functionalities I needed, and this [Yo
 
 With this layout, you need to have a base panel that serves as your starting point. From there, you can nest all the different panels that you want to switch between. My setup looked like:
 
-<img src="/../master/images/CardLayout.png" width="400">
+<img src="/../master/images/CardLayout.png" width="450">
 
 # Welcome Screen Setup
 
@@ -47,7 +47,8 @@ I ended up having to mash up a lot of different tutorials to get a working resul
 [This YouTube tutorial](https://www.youtube.com/watch?v=fwiBilSLnS0) provided the most guidance. Unfortunately, Netbeans doesn't allow image resizing in the editor itself, so the image inside the 'resources' folder needs to be your desired dimensions. This was a sort of guess-and-check process for me, especially since I have no sense of perspective, and [this image resizer](https://www.simpleimageresizer.com) ended up working the best.
 
 Here are some screenshots detailing the process more clearly:
-<img src="/../master/images/CardLayout.png" width="200"> <img src="/../master/images/CardLayout.png" width="200">
+
+<img src="/../master/images/CardLayout.png" width="300"> <img src="/../master/images/CardLayout.png" width="300">
 
 
 
