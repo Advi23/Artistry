@@ -1,6 +1,6 @@
 # GUI Setup
 
-This file covers my process setting up the GUI for _Artistry_.
+This file covers my process creating the GUI for _Artistry_.
 
 As I was a beginner developer while making this project, I chose to create my GUI entirely using Netbeans' interface. For my next Java project, I would likely use code, as that option allows for a lot more customizability. It's also easier to fix your mistakes. 
 
@@ -22,7 +22,37 @@ A **Card Layout** looked to offer all the functionalities I needed, and this [Yo
 
 With this layout, you need to have a base panel that serves as your starting point. From there, you can nest all the different panels that you want to switch between. My setup looked like:
 
-![Screenshot of Netbeans CardLayout]<img src="/../master/images/CardLayout.png" width="500">
+<img src="/../master/images/CardLayout.png" width="400">
+
+# Welcome Screen Setup
+
+Now that I had my basic layout, I needed to get started with my **panel_welcome**, or the Welcome Screen. I first created a label on top that gave simple instructions for _Artistry_. I customized it by right-clicking on the label and selecting **Properties**. From there, I could change the background color, font, and horizontal/vertical alignment. 
+
+For the images, I chose to create them on a new panel called **panel_options**, because I wanted to experiment with different layout styles and didn't want to have to start over _again_ if I messed up. 
+
+I first tried out the **Grid Layout** for panel_options, and [this Youtube tutorial](https://www.youtube.com/watch?v=impJtkTcQ94) was helpful in starting out. However, I soon realized that this layout wouldn't work well since I needed to also place checkboxes close to the corresponding image, and that wasn't easily allowed. 
+
+Further research pointed me to the **Absolute Layout**, which is very flexible in that you can place things basically anywhere you'd like. A prototype seemed to work fine, and I proceeded to customize the layout. 
+
+After the layout, the biggest challenge with this section was adding my custom images to show the various filters available. My first resource was the official Netbeans website, but once I followed its instructions I began getting a 'null: location not found' error. Off to the web I went.
+
+I ended up having to mash up a lot of different tutorials to get a working result, so here's my method:
+
+1. In the **Files** tab (should be next to projects), create a new folder in your **main** folder. This is specifically for your images. I named mine 'resources'.
+2. Copy and paste your desired files into this 'resources' folder.
+3. Right-click on your label, select properties, and go to the **icon** property.
+4. Click the 3 dots and choose the 'Image Within Project' option.
+5. You should be set to the <default> package, and from there select your desired image file from the dropdown
+
+[This YouTube tutorial](https://www.youtube.com/watch?v=fwiBilSLnS0) provided the most guidance. Unfortunately, Netbeans doesn't allow image resizing in the editor itself, so the image inside the 'resources' folder needs to be your desired dimensions. This was a sort of guess-and-check process for me, especially since I have no sense of perspective, and [this image resizer](https://www.simpleimageresizer.com) ended up working the best.
+
+Here are some screenshots detailing the process more clearly:
+<img src="/../master/images/CardLayout.png" width="200"> <img src="/../master/images/CardLayout.png" width="200">
+
+
+
+
+
 
 
 
