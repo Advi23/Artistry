@@ -22,7 +22,7 @@ A **Card Layout** looked to offer all the functionalities I needed, and this [Yo
 
 With this layout, you need to have a base panel that serves as your starting point. From there, you can nest all the different panels that you want to switch between. My setup looked like:
 
-<img src="/../master/images/CardLayout.png" width="450">
+<img align = "center" src="/../master/images/CardLayout.png" width="400">
 
 # Welcome Screen Setup
 
@@ -48,7 +48,7 @@ I ended up having to mash up a lot of different tutorials to get a working resul
 
 Here are some screenshots detailing the process more clearly:
 
-<img src="/../master/images/CardLayout.png" width="300"> <img src="/../master/images/CardLayout.png" width="300">
+<img align="left" src="/../master/images/CardLayout.png" width="300"> <img align = "right" src="/../master/images/CardLayout.png" width="300">
 
 
 
