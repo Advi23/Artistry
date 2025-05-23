@@ -51,8 +51,8 @@ I ended up having to mash up a lot of different tutorials to get a working resul
 Here are some screenshots detailing the process more clearly:
 
 <p align = "center">
-<img align="left" src="/../master/images/CardLayout.png" width="300"> 
-<img align = "right" src="/../master/images/CardLayout.png" width="300">
+<img src="/../master/images/CardLayout.png" width="300"> 
+<img src="/../master/images/CardLayout.png" width="300">
 </p>
 
 
