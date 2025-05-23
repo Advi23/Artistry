@@ -2,6 +2,8 @@
 
 This file covers my process creating the GUI for _Artistry_.
 
+## Overview / Initial Build
+
 As I was a beginner developer while making this project, I chose to create my GUI entirely using Netbeans' interface. For my next Java project, I would likely use code, as that option allows for a lot more customizability. It's also easier to fix your mistakes. 
 
 I started building my GUI a bit overzealously, and this lack of a plan created lots of problems later on. 
@@ -26,7 +28,7 @@ With this layout, you need to have a base panel that serves as your starting poi
 <img src="/../master/images/CardLayout.png" width="400">
 </p>
 
-# Welcome Screen Setup
+## Welcome Screen Setup
 
 Now that I had my basic layout, I needed to get started with my **panel_welcome**, or the Welcome Screen. I first created a label on top that gave simple instructions for _Artistry_. I customized it by right-clicking on the label and selecting **Properties**. From there, I could change the background color, font, and horizontal/vertical alignment. 
 
