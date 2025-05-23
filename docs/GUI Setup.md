@@ -54,7 +54,7 @@ Here are some screenshots detailing the process more clearly:
 
 <p align = "center">
 <img src="/../master/images/ResourcesFolder.png" width="300"> 
-<img src="/../master/images/IconProperty.png" width="300">
+<img src="/../master/images/IconProperty.png" width="450">
 </p>
 
 
