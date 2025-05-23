@@ -17,13 +17,13 @@ However, for some reason I started getting a new message (403 error) after creat
 
 ```
 ssh-keygen -t ed25519 -C "my_email"
-** fill in questions on screen **
+** answer questions on screen **
 cat ~/.ssh/id_ed25519.pub
 ```
 
 After about an hour (an embarassingly long time ;_;), I finally transferred all my files to my new GitHub repo!! I just quickly added a license to my master branch (my preferred default instead of main), and [set up my readmes](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). 
 
-Something I think isn't covered much in the above docs, however, is inserting pictures. I think the best method is using relative links, where you pull and image from an existing folder in your repository (the 'images' folder for me), but I had quite a bit of trouble with alignments and resizing it. I pieced together this code after lots of Stack Overflow visits:
+Something I think isn't covered much in the above docs, however, is inserting pictures. I think the best method is using relative links, where you pull an image from an existing folder in your repository (the 'images' folder for me), but I had quite a bit of trouble with alignments and resizing it. I pieced together this code after lots of Stack Overflow visits:
 
 ```
 <p align="desired alignment">
@@ -31,6 +31,7 @@ Something I think isn't covered much in the above docs, however, is inserting pi
 </p>
 
 ```
+This code also allow you to align multiple images together by including them in the same block. This is how I placed 2 images side by side in some of my docs. 
 
 When I needed to commit new code after debugging or adding new features, I used these commands in my terminal after committing locally in Netbeans:
 
