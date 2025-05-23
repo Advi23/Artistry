@@ -46,7 +46,7 @@ I ended up having to mash up a lot of different tutorials to get a working resul
 2. Copy and paste your desired files into this 'resources' folder.
 3. Right-click on your label, select properties, and go to the **icon** property.
 4. Click the 3 dots and choose the 'Image Within Project' option.
-5. You should be set to the <default> package, and from there select your desired image file from the dropdown
+5. You should be set to the '<default>' package, and from there select your desired image file from the dropdown
 
 [This YouTube tutorial](https://www.youtube.com/watch?v=fwiBilSLnS0) provided the most guidance. Unfortunately, Netbeans doesn't allow image resizing in the editor itself, so the image inside the 'resources' folder needs to be your desired dimensions. This was a sort of guess-and-check process for me, especially since I have no sense of perspective, and [this image resizer](https://www.simpleimageresizer.com) ended up working the best.
 
@@ -56,6 +56,34 @@ Here are some screenshots detailing the process more clearly:
 <img src="/../master/images/ResourcesFolder.png" width="300"> 
 <img src="/../master/images/IconProperty.png" width="450">
 </p>
+
+Next, I wanted to track the number of options a user selects, making sure to count for deselections and edge cases (too many, none, etc.)
+To do this, I used a class variable called **checkBoxesFilled** that keeps track of all checkboxes selected using the JCheckBox method **.isSelected()** (this was a lifesaver!). The **maxBoxes()** method basically changes the label that counts the number of checkboxes selected, changing its text based on if a maximum amount of filters were picked. 
+
+The **chooseFilter()** method (explained in more detail later) also contains some code that changes the value of **checkBoxesFilled** based on a selection or deselection.
+
+## Transitions
+
+Once everything in **panel_welcome** was set to my liking, I now needed to move to **panel_mainScreen** at the click of a button. Luckily, my CardLayout YT video already explained the process, and I created a public method since I wanted to reuse the commands when moving between all screens. Here's my **changePanel()** method:
+
+```
+private void changePanel(JPanel panelBase, JPanel panelAdd) {
+        
+        panelBase.removeAll();
+        panelBase.add(panelAdd);
+        panelBase.repaint();
+        panelBase.revalidate();
+
+}
+
+```
+The **panelBase** is the base panel I was referencing before, and basically what we're doing is removing all the panels from this foundation, adding your desired panel that you want to transition to, and repainting the base panel.
+
+I also only allowed this method to be executed if **checkBoxesFilled** was greater than 0 (user picked at least 1 filter) and less than 5 (the max number of filters I allowed).
+
+
+
+
 
 
 
