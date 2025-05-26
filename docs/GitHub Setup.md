@@ -29,9 +29,8 @@ Something I think isn't covered much in the above docs, however, is inserting pi
 <p align="desired alignment">
   <img src="relative path to image" width="desired width (height automatically adjusts w/ aspect ratio" />
 </p>
-
 ```
-This code also allow you to align multiple images together by including them in the same block. This is how I placed 2 images side by side in some of my docs. 
+This code also allows you to align multiple images together by including them in the same block. This is how I placed 2 images side by side in some of my docs. 
 
 When I needed to commit new code after debugging or adding new features, I used these commands in my terminal after committing locally in Netbeans:
 
