@@ -1,6 +1,6 @@
 # GUI Setup
 
-This file covers my process creating the GUI for _Artistry_.
+This doc covers my process creating the GUI for _Artistry_.
 
 ## Overview / Initial Build
 
@@ -75,11 +75,46 @@ private void changePanel(JPanel panelBase, JPanel panelAdd) {
         panelBase.revalidate();
 
 }
-
 ```
 The **panelBase** is the base panel I was referencing before, and basically what we're doing is removing all the panels from this foundation, adding your desired panel that you want to transition to, and repainting the base panel.
 
 I also only allowed this method to be executed if **checkBoxesFilled** was greater than 0 (user picked at least 1 filter) and less than 5 (the max number of filters I allowed).
+
+## Main Screen Setup
+
+I next proceeded to setup my Main Screen. I started out by again adding my custom labels, buttons, and icons. The overview and general buttons were easy enough to set up. I wanted to add an instructions screen to help out users, so this involved creating a button and adding those 'i' icons, which took quite a bit of guesswork for the correct size.
+
+To transition to the **panel_Instructions** where the tutorial was displayed, I used the **changePanel()** method mentioned previously. I also added a 'Proceed to Mini Quiz' button and 'Regenerate' button. I explain the logistics behind the **Regenerate button** in full detail in another doc. 
+
+I also needed to actually display images based on the user's selection, so this involved an extensive interlude of accessing the API and then using that retrieved data, which again I explain in another doc. This doc is also where I dive into my custom "carousel" method of displaying images in a revolving manner seamlessly. 
+
+For each image, I added 2 options: maximizing the image to see more details, and removing the image and replacing it with a new one. Both of these icons were again imported in a similar manner to my Welcome Screen pictures. These individual images will be explained in further detail in the **Individual Screen Setup** portion.
+
+Without detailing all of the background work, I guess all I did for this portion of the GUI was add labels and buttons :).
+
+## Instructions Setup
+
+This section of the GUI is pretty self explanatory: I literally just added instructions for _Artistry_, but I still included it because I learned some things about Swing Controls.
+
+After adding the basic overview description and 'return to Main Screen' button, it was time for the actual tutorial.
+
+My first idea was to use a label for the text like I'd been doing for all the other text features, but I incorrectly assumed the label would automatically switch to multi-line text once it reached the maximum width. However, the text just trails off into ellipses (this actually ended up being beneficial later on!). 
+
+After a frightening encounter with Text Panes, I finally landed on the **Text Area**, whose description is 'A multi-line area that displays plain text'. Huh, that's exactly what I needed!
+
+The only annoying part was having to format and center everything myself, which was especially inconvenient whenever I found a typo or wanted to reexplain a feature :,).
+
+Once I beautified everything with a pop of color and font, this panel was ready to go.
+
+
+
+
+
+
+
+
+
+
 
 
 
