@@ -46,7 +46,7 @@ I ended up having to mash up a lot of different tutorials to get a working resul
 2. Copy and paste your desired files into this 'resources' folder.
 3. Right-click on your label, select properties, and go to the **icon** property.
 4. Click the 3 dots and choose the 'Image Within Project' option.
-5. You should be set to the '<default>' package, and from there select your desired image file from the dropdown
+5. You should be set to the 'default' package, and from there select your desired image file from the dropdown
 
 [This YouTube tutorial](https://www.youtube.com/watch?v=fwiBilSLnS0) provided the most guidance. Unfortunately, Netbeans doesn't allow image resizing in the editor itself, so the image inside the 'resources' folder needs to be your desired dimensions. This was a sort of guess-and-check process for me, especially since I have no sense of perspective, and [this image resizer](https://www.simpleimageresizer.com) ended up working the best.
 
