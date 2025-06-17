@@ -8,8 +8,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -36,7 +34,6 @@ public class MainWindow extends javax.swing.JFrame {
     private ArrayList<String> imageLabels;
     private ArrayList<JButton> mainButtons;
     private  ArrayList<Artwork> artworks;
-    private QuizEvaluator qe;
 
     /**
      * Creates new form MainWindow
@@ -53,7 +50,6 @@ public class MainWindow extends javax.swing.JFrame {
         imageLabels = new ArrayList<>();
         mainButtons = new ArrayList<>();
         artworks = new ArrayList<>();
-        qe = new QuizEvaluator(artworks);
        
         initComponents();
     }
@@ -1148,14 +1144,6 @@ public class MainWindow extends javax.swing.JFrame {
 
             changePanel(panel_base, panel_mainScreen);
             
-            TreeMap things = userSelection.getFilters();
-            Collection values = things.values();
-            ArrayList<String> value = new ArrayList<>(values);
-            
-            for (String filter : value) {
-                System.out.println(filter);
-            }
-            
             dh.compileArtworks(userSelection);
             artworks = dh.getArtworkList();
             
@@ -1248,8 +1236,10 @@ public class MainWindow extends javax.swing.JFrame {
         
         imagePanels.clear();
         imageLabels.clear();
+        individualPanels.clear();
         
     }
+    
     private void button_backToMain1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_backToMain1ActionPerformed
         // TODO add your handling code here:
         changePanel(panel_base, panel_mainScreen);
@@ -1259,9 +1249,8 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         changePanel(panel_base, panel_quiz);
-        qe = new QuizEvaluator(artworks);
         
-        ArrayList<String> questions1 = qe.question1();
+        //ArrayList<String> questions1 = qe.question1();
         
         ArrayList<JRadioButton> options = new ArrayList<>();
         
@@ -1271,7 +1260,7 @@ public class MainWindow extends javax.swing.JFrame {
         options.add(radioButton_answer4);
         options.add(radioButton_answer5);
         
-        String answer = qe.getAnswer1();
+        /*String answer = qe.getAnswer1();
         int indexOfAnswer = qe.indexAnswer1();
         
         label_question1.setText("<html>" + label_question1.getText() + 
@@ -1280,7 +1269,7 @@ public class MainWindow extends javax.swing.JFrame {
         for (int i = 0; i < questions1.size(); i++) {
             
             (options.get(i)).setText(questions1.get(i));
-        }
+        }*/
 
     }//GEN-LAST:event_button_miniQuizActionPerformed
 
