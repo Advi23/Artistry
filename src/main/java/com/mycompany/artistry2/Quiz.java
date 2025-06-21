@@ -5,7 +5,6 @@
 package com.mycompany.artistry2;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  *
@@ -15,12 +14,14 @@ public class Quiz {
     
     private ArrayList<Artwork> artworks;
     private ArrayList<Question> questions;
+    private ArrayList<String> options;
     private int score;
     
     public Quiz(ArrayList<Artwork> works) {
         artworks = works;
-        this.questions = new ArrayList<>();
+        questions = new ArrayList<>();
         score = 0;
+        options = new ArrayList<>();
         generateQuestions();
     }
 
@@ -44,9 +45,10 @@ public class Quiz {
         
         questions.add(dateQuestion());
         questions.add(artistQuestion());
-        questions.add(titleQuestion());
         questions.add(originQuestion());
-    } 
+        questions.add(titleQuestion());
+    }
+    
     
     private Question dateQuestion() {
         
@@ -59,9 +61,8 @@ public class Quiz {
             dates.add(work.getDate_created());
         }
         
-        String questionText = "When was the creation date of " + correctPiece.getTitle();
         
-        return new Question(questionText, dates, correctAnswer);
+        return new Question(correctPiece, dates, correctAnswer);
     }
     
     private Question artistQuestion() {
@@ -75,9 +76,7 @@ public class Quiz {
             artists.add(work.getArtist());
         }
         
-        String questionText = "Who created " + correctPiece.getTitle();
-        
-        return new Question(questionText, artists, correctAnswer);
+        return new Question(correctPiece, artists, correctAnswer);
     }
     
     private Question titleQuestion() {
@@ -91,9 +90,8 @@ public class Quiz {
             titles.add(work.getTitle());
         }
         
-        String questionText = "Who created the above image";
         
-        return new Question(questionText, titles, correctAnswer);
+        return new Question(correctPiece, titles, correctAnswer);
     }
     
     private Question originQuestion() {
@@ -106,16 +104,13 @@ public class Quiz {
         for (Artwork work: artworks) {
             places.add(work.getPlace_created());
         }
-        
-        String questionText = "Where was " + correctPiece.getTitle() + " created";
-        
-        return new Question(questionText, places, correctAnswer);
+
+        return new Question(correctPiece, places, correctAnswer);
     }
     
     private Artwork pickRandomArtwork() {
         
-        Random random = new Random();
-        int randomIndex = random.nextInt(artworks.size());
+        int randomIndex = (int) ((Math.random()) * artworks.size());
         
         Artwork correctPiece = artworks.get(randomIndex);
         

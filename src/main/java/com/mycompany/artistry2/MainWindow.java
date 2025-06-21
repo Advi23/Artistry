@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -34,6 +35,8 @@ public class MainWindow extends javax.swing.JFrame {
     private ArrayList<String> imageLabels;
     private ArrayList<JButton> mainButtons;
     private  ArrayList<Artwork> artworks;
+    private Quiz quiz;
+    ArrayList<JRadioButton> options;
 
     /**
      * Creates new form MainWindow
@@ -50,10 +53,11 @@ public class MainWindow extends javax.swing.JFrame {
         imageLabels = new ArrayList<>();
         mainButtons = new ArrayList<>();
         artworks = new ArrayList<>();
+        options = new ArrayList<>();
        
         initComponents();
+        
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -125,13 +129,36 @@ public class MainWindow extends javax.swing.JFrame {
         panel_quizScreen = new javax.swing.JPanel();
         panel_question1 = new javax.swing.JPanel();
         label_question1 = new javax.swing.JLabel();
-        radioButton_answer3 = new javax.swing.JRadioButton();
-        radioButton_answer1 = new javax.swing.JRadioButton();
-        radioButton_answer2 = new javax.swing.JRadioButton();
-        radioButton_answer4 = new javax.swing.JRadioButton();
-        radioButton_answer5 = new javax.swing.JRadioButton();
+        radioButton_answer1_3 = new javax.swing.JRadioButton();
+        radioButton_answer1_1 = new javax.swing.JRadioButton();
+        radioButton_answer1_2 = new javax.swing.JRadioButton();
+        radioButton_answer1_4 = new javax.swing.JRadioButton();
+        radioButton_answer1_5 = new javax.swing.JRadioButton();
         panel_question2 = new javax.swing.JPanel();
         label_question2 = new javax.swing.JLabel();
+        radioButton_answer2_1 = new javax.swing.JRadioButton();
+        radioButton_answer2_2 = new javax.swing.JRadioButton();
+        radioButton_answer2_4 = new javax.swing.JRadioButton();
+        radioButton_answer2_5 = new javax.swing.JRadioButton();
+        radioButton_answer2_3 = new javax.swing.JRadioButton();
+        panel_question3 = new javax.swing.JPanel();
+        label_question3 = new javax.swing.JLabel();
+        radioButton_answer3_1 = new javax.swing.JRadioButton();
+        radioButton_answer3_2 = new javax.swing.JRadioButton();
+        radioButton_answer3_4 = new javax.swing.JRadioButton();
+        radioButton_answer3_5 = new javax.swing.JRadioButton();
+        radioButton_answer3_3 = new javax.swing.JRadioButton();
+        panel_question4 = new javax.swing.JPanel();
+        label_question4 = new javax.swing.JLabel();
+        radioButton_answer4_1 = new javax.swing.JRadioButton();
+        radioButton_answer4_2 = new javax.swing.JRadioButton();
+        radioButton_answer4_3 = new javax.swing.JRadioButton();
+        radioButton_answer4_4 = new javax.swing.JRadioButton();
+        radioButton_answer4_5 = new javax.swing.JRadioButton();
+        panel_results = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        button_NextQuestion = new javax.swing.JButton();
+        button_BackQuestion = new javax.swing.JButton();
         panel_individualScreen = new javax.swing.JPanel();
         button_backToMain2 = new javax.swing.JButton();
         panel_individualDeets = new javax.swing.JPanel();
@@ -717,30 +744,30 @@ public class MainWindow extends javax.swing.JFrame {
         label_question1.setForeground(new java.awt.Color(255, 255, 255));
         label_question1.setText("When was the creation date of ");
 
-        radioButton_answer3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
-        radioButton_answer3.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer3.setText("jRadioButton1");
+        radioButton_answer1_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer1_3.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer1_3.setText("jRadioButton1");
 
-        radioButton_answer1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
-        radioButton_answer1.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer1.setText("jRadioButton1");
+        radioButton_answer1_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer1_1.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer1_1.setText("jRadioButton1");
 
-        radioButton_answer2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
-        radioButton_answer2.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer2.setText("jRadioButton1");
-        radioButton_answer2.addActionListener(new java.awt.event.ActionListener() {
+        radioButton_answer1_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer1_2.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer1_2.setText("jRadioButton1");
+        radioButton_answer1_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioButton_answer2ActionPerformed(evt);
+                radioButton_answer1_2ActionPerformed(evt);
             }
         });
 
-        radioButton_answer4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
-        radioButton_answer4.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer4.setText("jRadioButton1");
+        radioButton_answer1_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer1_4.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer1_4.setText("jRadioButton1");
 
-        radioButton_answer5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
-        radioButton_answer5.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer5.setText("jRadioButton1");
+        radioButton_answer1_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer1_5.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer1_5.setText("jRadioButton1");
 
         javax.swing.GroupLayout panel_question1Layout = new javax.swing.GroupLayout(panel_question1);
         panel_question1.setLayout(panel_question1Layout);
@@ -750,18 +777,18 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(panel_question1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_question1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(label_question1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label_question1, javax.swing.GroupLayout.PREFERRED_SIZE, 1281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_question1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(radioButton_answer1_1, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_question1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addGroup(panel_question1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(radioButton_answer2, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radioButton_answer3, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radioButton_answer4, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radioButton_answer5, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panel_question1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(radioButton_answer1, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                            .addComponent(radioButton_answer1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer1_3, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer1_4, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer1_5, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         panel_question1Layout.setVerticalGroup(
             panel_question1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -769,16 +796,16 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(label_question1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(radioButton_answer1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(radioButton_answer1_1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(radioButton_answer2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(radioButton_answer1_2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
-                .addComponent(radioButton_answer3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(radioButton_answer1_3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
-                .addComponent(radioButton_answer4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(radioButton_answer5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addComponent(radioButton_answer1_4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(radioButton_answer1_5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
 
         panel_quizScreen.add(panel_question1, "card2");
@@ -789,24 +816,248 @@ public class MainWindow extends javax.swing.JFrame {
         label_question2.setForeground(new java.awt.Color(255, 255, 255));
         label_question2.setText("Who was the creator of ");
 
+        radioButton_answer2_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer2_1.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer2_1.setText("jRadioButton1");
+
+        radioButton_answer2_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer2_2.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer2_2.setText("jRadioButton1");
+        radioButton_answer2_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer2_2ActionPerformed(evt);
+            }
+        });
+
+        radioButton_answer2_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer2_4.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer2_4.setText("jRadioButton1");
+
+        radioButton_answer2_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer2_5.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer2_5.setText("jRadioButton1");
+
+        radioButton_answer2_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer2_3.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer2_3.setText("jRadioButton1");
+
         javax.swing.GroupLayout panel_question2Layout = new javax.swing.GroupLayout(panel_question2);
         panel_question2.setLayout(panel_question2Layout);
         panel_question2Layout.setHorizontalGroup(
             panel_question2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_question2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(label_question2, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGroup(panel_question2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_question2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(label_question2, javax.swing.GroupLayout.PREFERRED_SIZE, 1281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_question2Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(panel_question2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(radioButton_answer2_2, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer2_3, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer2_4, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer2_5, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer2_1, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         panel_question2Layout.setVerticalGroup(
             panel_question2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_question2Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(label_question2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(radioButton_answer2_1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(radioButton_answer2_2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(radioButton_answer2_3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(radioButton_answer2_4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(radioButton_answer2_5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
 
-        panel_quizScreen.add(panel_question2, "card3");
+        panel_quizScreen.add(panel_question2, "card5");
+
+        panel_question3.setBackground(new java.awt.Color(99, 107, 47));
+
+        label_question3.setFont(new java.awt.Font("Cochin", 0, 24)); // NOI18N
+        label_question3.setForeground(new java.awt.Color(255, 255, 255));
+        label_question3.setText("What is the origin of ");
+
+        radioButton_answer3_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer3_1.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer3_1.setText("jRadioButton1");
+
+        radioButton_answer3_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer3_2.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer3_2.setText("jRadioButton1");
+        radioButton_answer3_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer3_2ActionPerformed(evt);
+            }
+        });
+
+        radioButton_answer3_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer3_4.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer3_4.setText("jRadioButton1");
+
+        radioButton_answer3_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer3_5.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer3_5.setText("jRadioButton1");
+
+        radioButton_answer3_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer3_3.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer3_3.setText("jRadioButton1");
+
+        javax.swing.GroupLayout panel_question3Layout = new javax.swing.GroupLayout(panel_question3);
+        panel_question3.setLayout(panel_question3Layout);
+        panel_question3Layout.setHorizontalGroup(
+            panel_question3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_question3Layout.createSequentialGroup()
+                .addGroup(panel_question3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_question3Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(label_question3, javax.swing.GroupLayout.PREFERRED_SIZE, 1281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_question3Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(panel_question3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(radioButton_answer3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer3_3, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer3_4, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer3_5, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radioButton_answer3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 1159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        panel_question3Layout.setVerticalGroup(
+            panel_question3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_question3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(label_question3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(radioButton_answer3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(radioButton_answer3_2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(radioButton_answer3_3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(radioButton_answer3_4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(radioButton_answer3_5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
+        );
+
+        panel_quizScreen.add(panel_question3, "card4");
+
+        panel_question4.setBackground(new java.awt.Color(99, 107, 47));
+
+        label_question4.setFont(new java.awt.Font("Cochin", 0, 24)); // NOI18N
+        label_question4.setForeground(new java.awt.Color(255, 255, 255));
+        label_question4.setText("What is the name of the above piece?  ");
+
+        radioButton_answer4_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer4_1.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer4_1.setText("jRadioButton1");
+
+        radioButton_answer4_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer4_2.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer4_2.setText("jRadioButton1");
+
+        radioButton_answer4_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer4_3.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer4_3.setText("jRadioButton1");
+
+        radioButton_answer4_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer4_4.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer4_4.setText("jRadioButton1");
+
+        radioButton_answer4_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
+        radioButton_answer4_5.setForeground(new java.awt.Color(255, 255, 255));
+        radioButton_answer4_5.setText("jRadioButton1");
+
+        javax.swing.GroupLayout panel_question4Layout = new javax.swing.GroupLayout(panel_question4);
+        panel_question4.setLayout(panel_question4Layout);
+        panel_question4Layout.setHorizontalGroup(
+            panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_question4Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_question4Layout.createSequentialGroup()
+                        .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radioButton_answer4_3, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel_question4Layout.createSequentialGroup()
+                                .addComponent(radioButton_answer4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(91, 91, 91)
+                                .addComponent(radioButton_answer4_5, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label_question4, javax.swing.GroupLayout.PREFERRED_SIZE, 1281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(panel_question4Layout.createSequentialGroup()
+                        .addComponent(radioButton_answer4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(radioButton_answer4_4, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))))
+        );
+        panel_question4Layout.setVerticalGroup(
+            panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_question4Layout.createSequentialGroup()
+                .addContainerGap(246, Short.MAX_VALUE)
+                .addComponent(label_question4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioButton_answer4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radioButton_answer4_4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioButton_answer4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radioButton_answer4_5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(radioButton_answer4_3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+        );
+
+        panel_quizScreen.add(panel_question4, "card5");
+
+        jLabel1.setText("DONEEEEEEEEEEEEE");
+
+        javax.swing.GroupLayout panel_resultsLayout = new javax.swing.GroupLayout(panel_results);
+        panel_results.setLayout(panel_resultsLayout);
+        panel_resultsLayout.setHorizontalGroup(
+            panel_resultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_resultsLayout.createSequentialGroup()
+                .addGap(536, 536, 536)
+                .addComponent(jLabel1)
+                .addContainerGap(698, Short.MAX_VALUE))
+        );
+        panel_resultsLayout.setVerticalGroup(
+            panel_resultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_resultsLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(jLabel1)
+                .addContainerGap(344, Short.MAX_VALUE))
+        );
+
+        panel_quizScreen.add(panel_results, "card6");
+
+        button_NextQuestion.setBackground(new java.awt.Color(31, 98, 143));
+        button_NextQuestion.setFont(new java.awt.Font("Cochin", 1, 18)); // NOI18N
+        button_NextQuestion.setForeground(new java.awt.Color(255, 255, 255));
+        button_NextQuestion.setText("Next");
+        button_NextQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_NextQuestionActionPerformed(evt);
+            }
+        });
+
+        button_BackQuestion.setBackground(new java.awt.Color(31, 98, 143));
+        button_BackQuestion.setFont(new java.awt.Font("Cochin", 1, 18)); // NOI18N
+        button_BackQuestion.setForeground(new java.awt.Color(255, 255, 255));
+        button_BackQuestion.setText("Back");
+        button_BackQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_BackQuestionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_quizLayout = new javax.swing.GroupLayout(panel_quiz);
         panel_quiz.setLayout(panel_quizLayout);
@@ -820,6 +1071,12 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(button_backToMain1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(button_BackQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
             .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
                     .addContainerGap(57, Short.MAX_VALUE)
@@ -833,7 +1090,11 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(label_MiniQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(button_backToMain1)
-                .addContainerGap(679, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 617, Short.MAX_VALUE)
+                .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_BackQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
             .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
                     .addContainerGap(138, Short.MAX_VALUE)
@@ -1173,6 +1434,7 @@ public class MainWindow extends javax.swing.JFrame {
             
             setup();
             
+            
         }
     }//GEN-LAST:event_button_ProceedActionPerformed
 
@@ -1199,6 +1461,27 @@ public class MainWindow extends javax.swing.JFrame {
                 button.setContentAreaFilled(false);
                 button.setBorderPainted(false);
             }
+            
+            options.add(radioButton_answer1_1);
+            options.add(radioButton_answer1_2);
+            options.add(radioButton_answer1_3);
+            options.add(radioButton_answer1_4);
+            options.add(radioButton_answer1_5);
+            options.add(radioButton_answer2_1);
+            options.add(radioButton_answer2_2);
+            options.add(radioButton_answer2_3);
+            options.add(radioButton_answer2_4);
+            options.add(radioButton_answer2_5);
+            options.add(radioButton_answer3_1);
+            options.add(radioButton_answer3_2);
+            options.add(radioButton_answer3_3);
+            options.add(radioButton_answer3_4);
+            options.add(radioButton_answer3_5);
+            options.add(radioButton_answer4_1);
+            options.add(radioButton_answer4_2);
+            options.add(radioButton_answer4_3);
+            options.add(radioButton_answer4_4);
+            options.add(radioButton_answer4_5);
 
     }
     
@@ -1216,7 +1499,6 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         changePanel(panel_base, panel_welcome);
-        
         resetInformation();
 
     }//GEN-LAST:event_button_regenerateActionPerformed
@@ -1249,30 +1531,49 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         changePanel(panel_base, panel_quiz);
+        String title;
+        quiz = new Quiz(artworks);
         
-        //ArrayList<String> questions1 = qe.question1();
+        title = setOptions(0, options.indexOf(radioButton_answer1_1),
+                options.indexOf(radioButton_answer1_5));
         
-        ArrayList<JRadioButton> options = new ArrayList<>();
+        label_question1.setText("<html>" + "When was the creation date of " +
+                " <i>" + title + "</i>" + "?</html>");
+
+        title = setOptions(1, options.indexOf(radioButton_answer2_1),
+                options.indexOf(radioButton_answer2_5));
         
-        options.add(radioButton_answer1);
-        options.add(radioButton_answer2);
-        options.add(radioButton_answer3);
-        options.add(radioButton_answer4);
-        options.add(radioButton_answer5);
+        label_question2.setText("<html>" + "Who created " +
+                " <i>" + title + "</i>" + "?</html>");
+                
+        title = setOptions(2, options.indexOf(radioButton_answer3_1),
+                options.indexOf(radioButton_answer3_5));
         
-        /*String answer = qe.getAnswer1();
-        int indexOfAnswer = qe.indexAnswer1();
+        label_question3.setText("<html>" + "Where was " +
+                " <i>" + title + "</i>" + " created?</html>");
         
-        label_question1.setText("<html>" + label_question1.getText() + 
-                " <i>" + (artworks.get(indexOfAnswer)).getTitle() + "</i>" + "?</html>");
+        setOptions(3, options.indexOf(radioButton_answer4_1),
+                options.indexOf(radioButton_answer4_5));
         
-        for (int i = 0; i < questions1.size(); i++) {
-            
-            (options.get(i)).setText(questions1.get(i));
-        }*/
+        label_question4.setText("<html>" + "What is the title of the above piece?</html>");
 
     }//GEN-LAST:event_button_miniQuizActionPerformed
 
+    private String setOptions(int questionIndex, int startOption, int endOption) {
+        
+        ArrayList<Question> allQuestions = quiz.getQuestions();
+        ArrayList<String> panel1Qs = (allQuestions.get(questionIndex)).getOptions();
+        Collections.shuffle(panel1Qs);
+        
+        for (int i = startOption; i <= endOption; i++) {
+            (options.get(i)).setText(panel1Qs.get(i % 5));
+        }
+        
+        String title = (allQuestions.get(questionIndex)).getCorrectPiece().getTitle();
+        
+        return title;
+    }
+    
     private void button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_NextActionPerformed
         // TODO add your handling code here:
         countClicks += 1;
@@ -1319,9 +1620,9 @@ public class MainWindow extends javax.swing.JFrame {
         label3.setText(imageLabels.get(afterCount));  
     }
     
-    private void radioButton_answer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2ActionPerformed
+    private void radioButton_answer1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer1_2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_radioButton_answer2ActionPerformed
+    }//GEN-LAST:event_radioButton_answer1_2ActionPerformed
 
     private void button_backToMain2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_backToMain2ActionPerformed
         // TODO add your handling code here:
@@ -1396,6 +1697,58 @@ public class MainWindow extends javax.swing.JFrame {
         setIndividualScreen(index);
     }//GEN-LAST:event_button_MaxImage3ActionPerformed
 
+    private void button_BackQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_BackQuestionActionPerformed
+ 
+        if (panel_question2.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question1);
+            
+        } else if (panel_question3.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question2);
+            
+        } else if (panel_question4.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question3);
+            
+        } else if (panel_results.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question4);
+            
+        } 
+        
+    }//GEN-LAST:event_button_BackQuestionActionPerformed
+
+    private void button_NextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_NextQuestionActionPerformed
+    
+        if (panel_question1.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question2);
+            
+        } else if (panel_question2.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question3);
+            
+        } else if (panel_question3.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_question4);
+            
+        } else if (panel_question4.isShowing()) {
+            
+            changePanel(panel_quizScreen, panel_results);
+            
+        }
+        
+    }//GEN-LAST:event_button_NextQuestionActionPerformed
+
+    private void radioButton_answer2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioButton_answer2_2ActionPerformed
+
+    private void radioButton_answer3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer3_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioButton_answer3_2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1433,11 +1786,13 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button_Back;
+    private javax.swing.JButton button_BackQuestion;
     private javax.swing.JButton button_Instructions;
     private javax.swing.JButton button_MaxImage1;
     private javax.swing.JButton button_MaxImage2;
     private javax.swing.JButton button_MaxImage3;
     private javax.swing.JButton button_Next;
+    private javax.swing.JButton button_NextQuestion;
     private javax.swing.JButton button_Proceed;
     private javax.swing.JButton button_XImage1;
     private javax.swing.JButton button_XImage2;
@@ -1460,6 +1815,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBox_Photography;
     private javax.swing.JCheckBox checkBox_Pop;
     private javax.swing.JComboBox<String> comboBox_shareOptions;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel label_Africa;
     private javax.swing.JLabel label_Americas;
@@ -1487,6 +1843,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel label_counter;
     private javax.swing.JLabel label_question1;
     private javax.swing.JLabel label_question2;
+    private javax.swing.JLabel label_question3;
+    private javax.swing.JLabel label_question4;
     private javax.swing.JPanel panel_ImageView1;
     private javax.swing.JPanel panel_ImageView2;
     private javax.swing.JPanel panel_ImageView3;
@@ -1501,14 +1859,32 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel panel_pieceDeets;
     private javax.swing.JPanel panel_question1;
     private javax.swing.JPanel panel_question2;
+    private javax.swing.JPanel panel_question3;
+    private javax.swing.JPanel panel_question4;
     private javax.swing.JPanel panel_quiz;
     private javax.swing.JPanel panel_quizScreen;
+    private javax.swing.JPanel panel_results;
     private javax.swing.JPanel panel_welcome;
-    private javax.swing.JRadioButton radioButton_answer1;
-    private javax.swing.JRadioButton radioButton_answer2;
-    private javax.swing.JRadioButton radioButton_answer3;
-    private javax.swing.JRadioButton radioButton_answer4;
-    private javax.swing.JRadioButton radioButton_answer5;
+    private javax.swing.JRadioButton radioButton_answer1_1;
+    private javax.swing.JRadioButton radioButton_answer1_2;
+    private javax.swing.JRadioButton radioButton_answer1_3;
+    private javax.swing.JRadioButton radioButton_answer1_4;
+    private javax.swing.JRadioButton radioButton_answer1_5;
+    private javax.swing.JRadioButton radioButton_answer2_1;
+    private javax.swing.JRadioButton radioButton_answer2_2;
+    private javax.swing.JRadioButton radioButton_answer2_3;
+    private javax.swing.JRadioButton radioButton_answer2_4;
+    private javax.swing.JRadioButton radioButton_answer2_5;
+    private javax.swing.JRadioButton radioButton_answer3_1;
+    private javax.swing.JRadioButton radioButton_answer3_2;
+    private javax.swing.JRadioButton radioButton_answer3_3;
+    private javax.swing.JRadioButton radioButton_answer3_4;
+    private javax.swing.JRadioButton radioButton_answer3_5;
+    private javax.swing.JRadioButton radioButton_answer4_1;
+    private javax.swing.JRadioButton radioButton_answer4_2;
+    private javax.swing.JRadioButton radioButton_answer4_3;
+    private javax.swing.JRadioButton radioButton_answer4_4;
+    private javax.swing.JRadioButton radioButton_answer4_5;
     private javax.swing.JScrollPane scrollPane_instructions;
     private javax.swing.JTextArea textArea_instructions;
     private javax.swing.JTextPane textPane_description;

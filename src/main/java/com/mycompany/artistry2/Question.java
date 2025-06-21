@@ -12,18 +12,18 @@ import java.util.ArrayList;
  */
 public class Question {
     
-    private String questionText;
+    private Artwork correctPiece;
     private ArrayList<String> options;
     private String correctAnswer;
 
-    public Question(String questionText, ArrayList<String> options, String correctAnswer) {
-        this.questionText = questionText;
+    public Question(Artwork correctPiece, ArrayList<String> options, String correctAnswer) {
+        this.correctPiece = correctPiece;
         this.options = options;
         this.correctAnswer = correctAnswer;
     }
 
-    public void setQuestionText(String questionText) {
-        this.questionText = questionText;
+    public void setCorrectPiece(Artwork correctPiece) {
+        this.correctPiece = correctPiece;
     }
 
     public void setOptions(ArrayList<String> options) {
@@ -34,8 +34,8 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-    public String getQuestionText() {
-        return questionText;
+    public Artwork getCorrectPiece() {
+        return correctPiece;
     }
 
     public ArrayList<String> getOptions() {
