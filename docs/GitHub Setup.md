@@ -23,7 +23,7 @@ cat ~/.ssh/id_ed25519.pub
 
 After about an hour (an embarassingly long time ;_;), I finally transferred all my files to my new GitHub repo!! I just quickly added a license to my master branch (my preferred default instead of main), and [set up my readmes](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax). 
 
-Something I think isn't covered much in the above docs, however, is inserting pictures. I think the best method is using relative links, where you pull an image from an existing folder in your repository (the 'images' folder for me), but I had quite a bit of trouble with alignments and resizing it. I pieced together this code after lots of Stack Overflow visits:
+Something I think isn't covered much in the above linked docs, however, is inserting pictures. I think the best method is using relative links, where you pull an image from an existing folder in your repository (the 'images' folder for me), but I had quite a bit of trouble with alignments and resizing it. I pieced together this code after lots of Stack Overflow visits:
 
 ```
 <p align="desired alignment">
