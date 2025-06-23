@@ -78,7 +78,17 @@ private void changePanel(JPanel panelBase, JPanel panelAdd) {
 ```
 The **panelBase** is the base panel I was referencing before, and basically what we're doing is removing all the panels from this foundation, adding your desired panel that you want to transition to, and repainting the base panel.
 
-I also only allowed this method to be executed if **checkBoxesFilled** was greater than 0 (user picked at least 1 filter) and less than 5 (the max number of filters I allowed).
+I also only allowed this method to be executed if **checkBoxesFilled** was greater than 0 (user picked at least 1 filter) and less than 5 (the max number of filters I allowed). 
+
+For the transition from the Welcome screen to the Main Screen in particular, it took a couple of seconds because my program needed to access the API and return the retrieved information. I didn't want users to think there was a glitch during this time, so I wanted to add a "Loading..." message in the meantime. This ended up being a lot more complicated than I expected!
+
+I wanted to change my **button_Proceed** text, so that it would look like below:
+
+<p align = "center">
+<img src="/../master/images/ResourcesFolder.png" width="300"> 
+<img src="/../master/images/IconProperty.png" width="450">
+</p>
+
 
 ## Main Screen Setup
 
