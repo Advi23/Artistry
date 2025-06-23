@@ -4,6 +4,7 @@
  */
 package com.mycompany.artistry2;
 
+import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -28,12 +29,34 @@ public class UserSelection {
       
     }
     
+    public void removeFilter(String filter) {
+        Integer keyToRemove = null;
+        for (Map.Entry<Integer, String> entry : filters.entrySet()) {
+            if ((entry.getValue()).equals(filter)) {
+                keyToRemove = entry.getKey();
+                break;
+            }
+        }
+        
+        if (keyToRemove != null) {
+            filters.remove(keyToRemove);
+        }
+    }
+    
     public void clearFilters() {
         filters.clear();
     }
     
     public TreeMap getFilters() {
         return filters;
+    }
+    
+    public String toString() {
+        String output = "";
+        for (String value: filters.values()) {
+            output += value + "\n";
+        }
+        return output;
     }
     
 }

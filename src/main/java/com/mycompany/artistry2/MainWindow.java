@@ -18,6 +18,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextPane;
+import javax.swing.SwingWorker;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 /**
  *
@@ -33,7 +38,6 @@ public class MainWindow extends javax.swing.JFrame {
     private ArrayList<BufferedImage> individualPanels;
     private int countClicks;
     private ArrayList<String> imageLabels;
-    private ArrayList<JButton> mainButtons;
     private  ArrayList<Artwork> artworks;
     private Quiz quiz;
     ArrayList<JRadioButton> options;
@@ -51,7 +55,6 @@ public class MainWindow extends javax.swing.JFrame {
         individualPanels = new ArrayList<>();
         countClicks = 0;
         imageLabels = new ArrayList<>();
-        mainButtons = new ArrayList<>();
         artworks = new ArrayList<>();
         options = new ArrayList<>();
        
@@ -98,6 +101,7 @@ public class MainWindow extends javax.swing.JFrame {
         checkBox_Miniature = new javax.swing.JCheckBox();
         button_Proceed = new javax.swing.JButton();
         label_counter = new javax.swing.JLabel();
+        label_credits = new javax.swing.JLabel();
         panel_mainScreen = new javax.swing.JPanel();
         label_MainScreen = new javax.swing.JLabel();
         button_Instructions = new javax.swing.JButton();
@@ -163,7 +167,6 @@ public class MainWindow extends javax.swing.JFrame {
         button_backToMain2 = new javax.swing.JButton();
         panel_individualDeets = new javax.swing.JPanel();
         panel_individualImage = new ImagePanel();
-        comboBox_shareOptions = new javax.swing.JComboBox<>();
         panel_pieceDeets = new javax.swing.JPanel();
         label_Title = new javax.swing.JLabel();
         label_Date = new javax.swing.JLabel();
@@ -171,6 +174,7 @@ public class MainWindow extends javax.swing.JFrame {
         label_Place = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         textPane_description = new javax.swing.JTextPane();
+        button_SaveDesktop = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -388,6 +392,10 @@ public class MainWindow extends javax.swing.JFrame {
         label_counter.setOpaque(true);
         panel_options.add(label_counter, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 430, 40));
 
+        label_credits.setFont(new java.awt.Font("Cochin", 0, 14)); // NOI18N
+        label_credits.setText("This application was developed using the Art Institute of Chicago API");
+        panel_options.add(label_credits, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 420, -1));
+
         javax.swing.GroupLayout panel_welcomeLayout = new javax.swing.GroupLayout(panel_welcome);
         panel_welcome.setLayout(panel_welcomeLayout);
         panel_welcomeLayout.setHorizontalGroup(
@@ -407,7 +415,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(label_Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panel_options, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
+                .addComponent(panel_options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1134,17 +1142,6 @@ public class MainWindow extends javax.swing.JFrame {
             .addGap(0, 477, Short.MAX_VALUE)
         );
 
-        comboBox_shareOptions.setBackground(new java.awt.Color(250, 203, 132));
-        comboBox_shareOptions.setFont(new java.awt.Font("Cochin", 0, 18)); // NOI18N
-        comboBox_shareOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Share", "Email", "Save to Desktop" }));
-        comboBox_shareOptions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(252, 179, 39), 2));
-        comboBox_shareOptions.setOpaque(true);
-        comboBox_shareOptions.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBox_shareOptionsActionPerformed(evt);
-            }
-        });
-
         panel_pieceDeets.setBackground(new java.awt.Color(31, 98, 143));
 
         label_Title.setBackground(new java.awt.Color(31, 98, 143));
@@ -1174,6 +1171,8 @@ public class MainWindow extends javax.swing.JFrame {
         label_Place.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_Place.setText("Made In: ");
         label_Place.setOpaque(true);
+
+        jScrollPane2.setBorder(null);
 
         textPane_description.setBackground(new java.awt.Color(31, 98, 143));
         textPane_description.setBorder(null);
@@ -1208,23 +1207,29 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(label_Artist, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(label_Place, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        button_SaveDesktop.setBackground(new java.awt.Color(250, 203, 132));
+        button_SaveDesktop.setFont(new java.awt.Font("Cochin", 1, 18)); // NOI18N
+        button_SaveDesktop.setText("Save to Desktop");
+        button_SaveDesktop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_SaveDesktopActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_individualDeetsLayout = new javax.swing.GroupLayout(panel_individualDeets);
         panel_individualDeets.setLayout(panel_individualDeetsLayout);
         panel_individualDeetsLayout.setHorizontalGroup(
             panel_individualDeetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_individualDeetsLayout.createSequentialGroup()
-                .addGroup(panel_individualDeetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_individualDeetsLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(panel_individualImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_individualDeetsLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(comboBox_shareOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(75, 75, 75)
+                .addGroup(panel_individualDeetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panel_individualImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button_SaveDesktop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(panel_pieceDeets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
@@ -1234,12 +1239,14 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(panel_individualDeetsLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(panel_individualDeetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panel_pieceDeets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_individualDeetsLayout.createSequentialGroup()
+                        .addComponent(panel_pieceDeets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(44, Short.MAX_VALUE))
                     .addGroup(panel_individualDeetsLayout.createSequentialGroup()
                         .addComponent(panel_individualImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboBox_shareOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addComponent(button_SaveDesktop, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))))
         );
 
         javax.swing.GroupLayout panel_individualScreenLayout = new javax.swing.GroupLayout(panel_individualScreen);
@@ -1311,6 +1318,7 @@ public class MainWindow extends javax.swing.JFrame {
         }
         else if (!checkbox.isSelected()) {
             checkBoxesFilled -= 1;
+            userSelection.removeFilter(filter);
         }
     }
     
@@ -1402,40 +1410,53 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if (checkBoxesFilled != 0 && checkBoxesFilled <= 5) {
+            button_Proceed.setText("Loading...");
+    
+            // Ensure UI updates immediately to show loading
+            button_Proceed.paintImmediately(button_Proceed.getVisibleRect());
 
-            changePanel(panel_base, panel_mainScreen);
-            
-            dh.compileArtworks(userSelection);
-            artworks = dh.getArtworkList();
-            
-            String artworkSize = Integer.toString(panel_ImageView1.getWidth()) + "," 
-                    + Integer.toString(panel_ImageView1.getHeight());
-            
-            String individualSize = Integer.toString(panel_individualImage.getWidth()) + "," 
-                    + Integer.toString(panel_individualImage.getHeight());
-            
-            ImageHandler ih;
-            BufferedImage image;
-            
-            for (Artwork piece : artworks) {
+            // Run heavy task in background
+            SwingWorker<Void, Void> worker = new SwingWorker<>() {
+                @Override
+                protected Void doInBackground() {
+
+                    dh.compileArtworks(userSelection);
+                    artworks = dh.getArtworkList();
+
+                    String artworkSize = panel_ImageView1.getWidth() + 
+                            "," + panel_ImageView1.getHeight();
+                    String individualSize = panel_individualImage.getWidth() + 
+                            "," + panel_individualImage.getHeight();
+
+                    for (Artwork piece : artworks) {
+                        
+                        ImageHandler ih = new ImageHandler(piece);
+                        BufferedImage image = ih.getArtworkImage(artworkSize);
+                        BufferedImage mainImage = ih.getArtworkImage(individualSize);
                 
-                ih = new ImageHandler(piece);
-                image = ih.getArtworkImage(artworkSize);
-                BufferedImage mainImage = ih.getArtworkImage(individualSize);
-                imagePanels.add(image); 
-                individualPanels.add(mainImage);
+                        imagePanels.add(image); 
+                        individualPanels.add(mainImage);
                 
-                String label = piece.getTitle();
-                if (label.length() >= 52) {
-                    label = label.substring(0, 52) + "...";
+                        String label = piece.getTitle();
+                        if (label.length() >= 52) {
+                            label = label.substring(0, 52) + "...";
+                        }
+                        imageLabels.add(label);
+                    }
+
+                    return null;
                 }
-                imageLabels.add(label);
-            }
-            
-            setup();
-            
-            
+
+                @Override
+                protected void done() {
+                    changePanel(panel_base, panel_mainScreen);
+                    setup(); // Once everything is ready, update the UI
+                }
+            };
+
+            worker.execute();
         }
+
     }//GEN-LAST:event_button_ProceedActionPerformed
 
     private void setup() {
@@ -1448,19 +1469,6 @@ public class MainWindow extends javax.swing.JFrame {
             label_LabelView1.setText(imageLabels.get(4));
             label_LabelView2.setText(imageLabels.get(0));
             label_LabelView3.setText(imageLabels.get(1));
-            
-            mainButtons.add(button_XImage1);
-            mainButtons.add(button_XImage2);
-            mainButtons.add(button_XImage3);
-            mainButtons.add(button_MaxImage3);
-            mainButtons.add(button_MaxImage1);
-            mainButtons.add(button_MaxImage2);
-            
-            for (JButton button : mainButtons) {
-                button.setOpaque(false);
-                button.setContentAreaFilled(false);
-                button.setBorderPainted(false);
-            }
             
             options.add(radioButton_answer1_1);
             options.add(radioButton_answer1_2);
@@ -1498,6 +1506,7 @@ public class MainWindow extends javax.swing.JFrame {
     private void button_regenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_regenerateActionPerformed
         // TODO add your handling code here:
         
+        button_Proceed.setText("Proceed to Curated Art Pieces!");
         changePanel(panel_base, panel_welcome);
         resetInformation();
 
@@ -1651,38 +1660,12 @@ public class MainWindow extends javax.swing.JFrame {
         textPane_description.setContentType("text/html");
         textPane_description.setText(
         "<html>" +
-            "<div style='text-align: center; line-height: 1.6;'>" +
+            "<div style='text-align: center;'>" +
             description +
             "</div>" +
         "</html>");
     }
     
-    private void comboBox_shareOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBox_shareOptionsActionPerformed
-        // TODO add your handling code here:
-        String optionSelected = (comboBox_shareOptions.getSelectedItem()).toString();
-        System.out.println(optionSelected);
-        BufferedImage image = ((ImagePanel)panel_individualImage).getImage();
-        
-        if (optionSelected.equals("Save to Desktop")) {
-            
-            JFileChooser jfc = new JFileChooser();
-            
-            if (jfc.showSaveDialog(this) == jfc.APPROVE_OPTION) {
-                
-                try {
-                    File outputFile = jfc.getSelectedFile();
-                    String path = outputFile.getAbsolutePath();
-                    if (!(path.toLowerCase()).endsWith(".png")) {
-                        outputFile = new File(path + ".png");
-                    }
-                    ImageIO.write(image, "png", outputFile);
-                } catch (IOException ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
-    }//GEN-LAST:event_comboBox_shareOptionsActionPerformed
-
     private void button_MaxImage2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MaxImage2ActionPerformed
         // TODO add your handling code here:
         changePanel(panel_base, panel_individualScreen);
@@ -1749,6 +1732,26 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioButton_answer3_2ActionPerformed
 
+    private void button_SaveDesktopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_SaveDesktopActionPerformed
+        
+        BufferedImage image = ((ImagePanel)panel_individualImage).getImage();
+        JFileChooser jfc = new JFileChooser();
+            
+        if (jfc.showSaveDialog(this) == jfc.APPROVE_OPTION) {
+                
+            try {
+                File outputFile = jfc.getSelectedFile();
+                String path = outputFile.getAbsolutePath();
+                if (!(path.toLowerCase()).endsWith(".png")) {
+                    outputFile = new File(path + ".png");
+                }
+                ImageIO.write(image, "png", outputFile);
+            } catch (IOException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_button_SaveDesktopActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1794,6 +1797,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton button_Next;
     private javax.swing.JButton button_NextQuestion;
     private javax.swing.JButton button_Proceed;
+    private javax.swing.JButton button_SaveDesktop;
     private javax.swing.JButton button_XImage1;
     private javax.swing.JButton button_XImage2;
     private javax.swing.JButton button_XImage3;
@@ -1814,7 +1818,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBox_Modernism;
     private javax.swing.JCheckBox checkBox_Photography;
     private javax.swing.JCheckBox checkBox_Pop;
-    private javax.swing.JComboBox<String> comboBox_shareOptions;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel label_Africa;
@@ -1841,6 +1844,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel label_Title;
     private javax.swing.JLabel label_Welcome;
     private javax.swing.JLabel label_counter;
+    private javax.swing.JLabel label_credits;
     private javax.swing.JLabel label_question1;
     private javax.swing.JLabel label_question2;
     private javax.swing.JLabel label_question3;
