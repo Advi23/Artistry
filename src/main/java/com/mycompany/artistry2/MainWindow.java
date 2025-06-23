@@ -101,7 +101,7 @@ public class MainWindow extends javax.swing.JFrame {
         checkBox_Miniature = new javax.swing.JCheckBox();
         button_Proceed = new javax.swing.JButton();
         label_counter = new javax.swing.JLabel();
-        label_credits = new javax.swing.JLabel();
+        label_creditsWelcome = new javax.swing.JLabel();
         panel_mainScreen = new javax.swing.JPanel();
         label_MainScreen = new javax.swing.JLabel();
         button_Instructions = new javax.swing.JButton();
@@ -122,6 +122,7 @@ public class MainWindow extends javax.swing.JFrame {
         label_LabelView3 = new javax.swing.JLabel();
         button_Next = new javax.swing.JButton();
         button_Back = new javax.swing.JButton();
+        label_creditsMain = new javax.swing.JLabel();
         panel_Instructions = new javax.swing.JPanel();
         label_Instructions = new javax.swing.JLabel();
         button_backToMain = new javax.swing.JButton();
@@ -163,6 +164,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         button_NextQuestion = new javax.swing.JButton();
         button_BackQuestion = new javax.swing.JButton();
+        label_creditsQuiz = new javax.swing.JLabel();
         panel_individualScreen = new javax.swing.JPanel();
         button_backToMain2 = new javax.swing.JButton();
         panel_individualDeets = new javax.swing.JPanel();
@@ -175,6 +177,7 @@ public class MainWindow extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         textPane_description = new javax.swing.JTextPane();
         button_SaveDesktop = new javax.swing.JButton();
+        label_creditsIndividaul = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -392,9 +395,15 @@ public class MainWindow extends javax.swing.JFrame {
         label_counter.setOpaque(true);
         panel_options.add(label_counter, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 430, 40));
 
-        label_credits.setFont(new java.awt.Font("Cochin", 0, 14)); // NOI18N
-        label_credits.setText("This application was developed using the Art Institute of Chicago API");
-        panel_options.add(label_credits, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 420, -1));
+        label_creditsWelcome.setFont(new java.awt.Font("Cochin", 0, 14)); // NOI18N
+        label_creditsWelcome.setText("<html><a href=''><font color='blue'>This application was developed using the Art Institute of Chicago API</font></a></html>");
+        label_creditsWelcome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_creditsWelcome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_creditsWelcomeMouseClicked(evt);
+            }
+        });
+        panel_options.add(label_creditsWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 420, -1));
 
         javax.swing.GroupLayout panel_welcomeLayout = new javax.swing.GroupLayout(panel_welcome);
         panel_welcome.setLayout(panel_welcomeLayout);
@@ -608,7 +617,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(panel_ImagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(label_LabelView1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addComponent(panel_ImageView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panel_ImagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panel_ImagesLayout.createSequentialGroup()
                         .addComponent(label_LabelView2, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -633,7 +642,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(label_LabelView2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_LabelView1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_LabelView3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panel_mainScreen.add(panel_Images, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 1270, 560));
@@ -657,6 +666,16 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         panel_mainScreen.add(button_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+
+        label_creditsMain.setFont(new java.awt.Font("Cochin", 0, 14)); // NOI18N
+        label_creditsMain.setText("<html><a href=''><font color='blue'>This application was developed using the Art Institute of Chicago API</font></a></html>");
+        label_creditsMain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_creditsMain.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_creditsMainMouseClicked(evt);
+            }
+        });
+        panel_mainScreen.add(label_creditsMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 740, 420, -1));
 
         panel_base.add(panel_mainScreen, "card3");
 
@@ -1067,6 +1086,15 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        label_creditsQuiz.setFont(new java.awt.Font("Cochin", 0, 14)); // NOI18N
+        label_creditsQuiz.setText("<html><a href=''><font color='blue'>This application was developed using the Art Institute of Chicago API.</font></a></html>");
+        label_creditsQuiz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_creditsQuiz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_creditsQuizMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_quizLayout = new javax.swing.GroupLayout(panel_quiz);
         panel_quiz.setLayout(panel_quizLayout);
         panel_quizLayout.setHorizontalGroup(
@@ -1085,6 +1113,10 @@ public class MainWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label_creditsQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(495, 495, 495))
             .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
                     .addContainerGap(57, Short.MAX_VALUE)
@@ -1098,11 +1130,13 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(label_MiniQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(button_backToMain1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 617, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 603, Short.MAX_VALUE)
                 .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button_BackQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_creditsQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
                     .addContainerGap(138, Short.MAX_VALUE)
@@ -1249,6 +1283,15 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGap(34, 34, 34))))
         );
 
+        label_creditsIndividaul.setFont(new java.awt.Font("Cochin", 0, 14)); // NOI18N
+        label_creditsIndividaul.setText("<html><a href=''><font color='blue'>This application was developed using the Art Institute of Chicago API. Any descriptions are courtesy of the Institute.</font></a></html>");
+        label_creditsIndividaul.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_creditsIndividaul.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_creditsIndividaulMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_individualScreenLayout = new javax.swing.GroupLayout(panel_individualScreen);
         panel_individualScreen.setLayout(panel_individualScreenLayout);
         panel_individualScreenLayout.setHorizontalGroup(
@@ -1260,7 +1303,10 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(button_backToMain2))
                     .addGroup(panel_individualScreenLayout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addComponent(panel_individualDeets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(panel_individualDeets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_individualScreenLayout.createSequentialGroup()
+                        .addGap(364, 364, 364)
+                        .addComponent(label_creditsIndividaul, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         panel_individualScreenLayout.setVerticalGroup(
@@ -1270,7 +1316,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(button_backToMain2)
                 .addGap(51, 51, 51)
                 .addComponent(panel_individualDeets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(label_creditsIndividaul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         panel_base.add(panel_individualScreen, "card6");
@@ -1634,18 +1682,19 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_radioButton_answer1_2ActionPerformed
 
     private void button_backToMain2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_backToMain2ActionPerformed
-        // TODO add your handling code here:
+
         changePanel(panel_base, panel_mainScreen);
     }//GEN-LAST:event_button_backToMain2ActionPerformed
 
     private void button_MaxImage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MaxImage1ActionPerformed
-        // TODO add your handling code here:
+
         changePanel(panel_base, panel_individualScreen);
         int index = imagePanels.indexOf(((ImagePanel)panel_ImageView1).getImage());
         setIndividualScreen(index);
     }//GEN-LAST:event_button_MaxImage1ActionPerformed
 
     private void setIndividualScreen(int index) {
+        
         BufferedImage currentImage = individualPanels.get(index);
         ((ImagePanel)panel_individualImage).updateImage(currentImage);
         
@@ -1667,14 +1716,14 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void button_MaxImage2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MaxImage2ActionPerformed
-        // TODO add your handling code here:
+
         changePanel(panel_base, panel_individualScreen);
         int index = imagePanels.indexOf(((ImagePanel)panel_ImageView2).getImage());
         setIndividualScreen(index);
     }//GEN-LAST:event_button_MaxImage2ActionPerformed
 
     private void button_MaxImage3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MaxImage3ActionPerformed
-        // TODO add your handling code here:
+
         changePanel(panel_base, panel_individualScreen);
         int index = imagePanels.indexOf(((ImagePanel)panel_ImageView3).getImage());
         setIndividualScreen(index);
@@ -1751,6 +1800,43 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_button_SaveDesktopActionPerformed
+
+    private void label_creditsWelcomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_creditsWelcomeMouseClicked
+        
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_label_creditsWelcomeMouseClicked
+
+    private void label_creditsMainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_creditsMainMouseClicked
+        
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_label_creditsMainMouseClicked
+
+    private void label_creditsIndividaulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_creditsIndividaulMouseClicked
+        
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_label_creditsIndividaulMouseClicked
+
+    private void label_creditsQuizMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_creditsQuizMouseClicked
+        
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_label_creditsQuizMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1844,7 +1930,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel label_Title;
     private javax.swing.JLabel label_Welcome;
     private javax.swing.JLabel label_counter;
-    private javax.swing.JLabel label_credits;
+    private javax.swing.JLabel label_creditsIndividaul;
+    private javax.swing.JLabel label_creditsMain;
+    private javax.swing.JLabel label_creditsQuiz;
+    private javax.swing.JLabel label_creditsWelcome;
     private javax.swing.JLabel label_question1;
     private javax.swing.JLabel label_question2;
     private javax.swing.JLabel label_question3;
