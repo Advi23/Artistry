@@ -82,11 +82,11 @@ I also only allowed this method to be executed if **checkBoxesFilled** was great
 
 For the transition from the Welcome screen to the Main Screen in particular, it took a couple of seconds because my program needed to access the API and return the retrieved information. I didn't want users to think there was a glitch during this time, so I wanted to add a "Loading..." message in the meantime. This ended up being a lot more complicated than I expected!
 
-I wanted to change my **button_Proceed** text, so that it would look like below:
+I wanted to change my **button_Proceed** text, so that it would change like in the images below:
 
 <p align = "center">
-<img src="/../master/images/ResourcesFolder.png" width="300"> 
-<img src="/../master/images/IconProperty.png" width="450">
+<img src="/../master/images/originalButton.png" width="450"> 
+<img src="/../master/images/loadingButton.png" width="450">
 </p>
 
 
