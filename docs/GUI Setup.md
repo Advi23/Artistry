@@ -145,6 +145,27 @@ The only annoying part was having to format and center everything myself, which 
 
 Once I beautified everything with a pop of color and font, this panel was ready to go.
 
+## Credits
+
+Since the backing for my entire application was the Art Institute of Chicago API, I wanted to properly credit them. My goal was a clickable link that would take users to the [docs for the API](https://api.artic.edu/docs/). The process wasn't very difficult, but it is a couple steps.
+
+The first challenge was making the text look like a hyperlink. I created my JLabel, and in the Text field used HTML like this:
+
+```
+<html><a href=''><font color='blue'>This application was developed using the Art Institute of Chicago API.</font></a></html>
+```
+Now the text is blue and underlined. Next, I needed to change the cursor, alerting users of the link. In the **cursor** section of the JLabel's properties, changing the option to **Hand Cursor** did the trick. Finally, to actually take the user to the correct website I used a **MouseClicked** event in a try-catch block, just in case the website didn't work.
+
+```
+try {
+      java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+```
+
+
+
 
 
 
