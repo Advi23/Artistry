@@ -80,7 +80,7 @@ The **panelBase** is the base panel I was referencing before, and basically what
 
 I also only allowed this method to be executed if **checkBoxesFilled** was greater than 0 (user picked at least 1 filter) and less than 5 (the max number of filters I allowed). 
 
-For the transition from the Welcome screen to the Main Screen in particular, it took a couple of seconds because my program needed to access the API and return the retrieved information. I didn't want users to think there was a glitch during this time, so I wanted to add a "Loading..." message in the meantime. This ended up being a lot more complicated than I expected!
+For the transition from the Welcome screen to the Main Screen in particular, it took a couple of seconds because my program needed to access the API and return the retrieved information. I didn't want users to think there was a glitch during this time, so I decided to add a "Loading..." message in the meantime. This ended up being a lot more complicated than I expected!
 
 I wanted to change my **button_Proceed** text, so that it would change like in the images below:
 
@@ -89,6 +89,35 @@ I wanted to change my **button_Proceed** text, so that it would change like in t
 <img src="/../master/images/loadingButton.png" width="450">
 </p>
 
+I first tried to change the button's text in the method that occurs once it's clicked, **button_ProceedActionPerformed**. This method is explained in a lot more detail in another doc, but for GUI purposes, I just added this line:
+
+```
+button_Proceed.setText("Loading...");
+```
+However, this command seemed to do nothing. The **button_ProceedActionPerformed** method contained a lot more commands, such as formatting all the returned data from the API and transitioning to the next panel, on the **Event Dispatch Thread (EDT)**. The EDT is the central thread responsible for processing the events related to an application's GUI. Because of this, the UI wasn't updated until after the entire method finished. Thus, the repaint for the button got **queued behind** all the other long-running code and never happened until it was too late (the next panel was already shown).
+
+After a lot of research, I realized that a **SwingWorker** was created to combat this exact scenario, allowing the UI to update immediately and placing the long-running tasks in a background thread. I pieced together this code, which ended up working:
+
+```
+button_Proceed.setText("Loading...");
+button_Proceed.paintImmediately(button_Proceed.getVisibleRect());  // Ensure UI updates immediately to show loading
+
+SwingWorker<Void, Void> worker = new SwingWorker<>() {   // Run heavy task in background
+@Override
+protected Void doInBackground() {
+        //Background tasks (accessing API, formatting information, etc.)
+}
+
+@Override
+protected void done() {
+        changePanel(panel_base, panel_mainScreen); //Only transition to next panel AFTER all background work is done
+}
+
+};
+
+worker.execute(); //Execute the SwingWorker
+
+```
 
 ## Main Screen Setup
 
