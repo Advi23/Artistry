@@ -158,10 +158,10 @@ Now the text is blue and underlined. Next, I needed to change the cursor, alerti
 
 ```
 try {
-      java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
-    } catch (Exception ex) {
-      ex.printStackTrace();
-    }
+        java.awt.Desktop.getDesktop().browse(new java.net.URI("https://api.artic.edu/docs/"));
+} catch (Exception ex) {
+        ex.printStackTrace();
+}
 ```
 
 
