@@ -71,7 +71,10 @@ Going back to the **DataHandler** class, the **generateArtwork** method converts
 
 Finally, the **compileArtworks** method ties everything together, taking in the **UserSelection** object I referred to at the beginning and generating an ArrayList of 5 randomized artworks based on the user's specifications. This is done by looping through the **values** of the UserSelection TreeMap and inputting each filter into the **fetchArtwork -> generateArtwork** pipeline before adding the final **Artwork** object into the **artworkList** ArrayList. 
 
-However, since this whole process is dependent on the filters in the UserSelection object, what happens when a user chooses less than 5 filters? The program is still expected to return 5 artworks, so 
+However, since this whole process is dependent on the filters in the UserSelection object, what happens when a user chooses less than 5 filters? The program is still expected to return 5 artworks, so it randomly selects another filter from the **filters** TreeMap until 5 works are reached.
+
+At this point, we are left with an ArrayList of the user's artworks, and the description of how this data is displayed in the Main Screen is in another doc.
+
 
 
 
