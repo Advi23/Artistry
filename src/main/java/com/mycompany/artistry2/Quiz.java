@@ -28,6 +28,10 @@ public class Quiz {
     public ArrayList<Question> getQuestions() {
         return questions;
     }
+    
+    public Artwork getQuestionFour() {
+        return (questions.get(3)).getCorrectPiece();
+    }
 
     public int getScore() {
         return score;

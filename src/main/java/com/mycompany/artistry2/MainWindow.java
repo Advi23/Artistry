@@ -41,6 +41,8 @@ public class MainWindow extends javax.swing.JFrame {
     private  ArrayList<Artwork> artworks;
     private Quiz quiz;
     ArrayList<JRadioButton> options;
+    private ArrayList<JRadioButton> userAnswers;
+    private int countQuiz;
 
     /**
      * Creates new form MainWindow
@@ -57,6 +59,8 @@ public class MainWindow extends javax.swing.JFrame {
         imageLabels = new ArrayList<>();
         artworks = new ArrayList<>();
         options = new ArrayList<>();
+        userAnswers = new ArrayList<>();
+        countQuiz = 0;
        
         initComponents();
         
@@ -71,6 +75,10 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup_question1 = new javax.swing.ButtonGroup();
+        buttonGroup_question2 = new javax.swing.ButtonGroup();
+        buttonGroup_question3 = new javax.swing.ButtonGroup();
+        buttonGroup_question4 = new javax.swing.ButtonGroup();
         panel_base = new javax.swing.JPanel();
         panel_welcome = new javax.swing.JPanel();
         label_Welcome = new javax.swing.JLabel();
@@ -155,13 +163,14 @@ public class MainWindow extends javax.swing.JFrame {
         radioButton_answer3_3 = new javax.swing.JRadioButton();
         panel_question4 = new javax.swing.JPanel();
         label_question4 = new javax.swing.JLabel();
+        button_Submit = new javax.swing.JButton();
         radioButton_answer4_1 = new javax.swing.JRadioButton();
         radioButton_answer4_2 = new javax.swing.JRadioButton();
         radioButton_answer4_3 = new javax.swing.JRadioButton();
         radioButton_answer4_4 = new javax.swing.JRadioButton();
         radioButton_answer4_5 = new javax.swing.JRadioButton();
+        panel_questionImage = new ImagePanel();
         panel_results = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         button_NextQuestion = new javax.swing.JButton();
         button_BackQuestion = new javax.swing.JButton();
         label_creditsQuiz = new javax.swing.JLabel();
@@ -480,6 +489,11 @@ public class MainWindow extends javax.swing.JFrame {
         button_XImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/XButton.png"))); // NOI18N
         button_XImage1.setBorder(null);
         button_XImage1.setOpaque(true);
+        button_XImage1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_XImage1ActionPerformed(evt);
+            }
+        });
 
         button_MaxImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MaximizeButton.png"))); // NOI18N
         button_MaxImage1.setBorder(null);
@@ -518,6 +532,11 @@ public class MainWindow extends javax.swing.JFrame {
         button_XImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/XButton.png"))); // NOI18N
         button_XImage2.setBorder(null);
         button_XImage2.setOpaque(true);
+        button_XImage2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_XImage2ActionPerformed(evt);
+            }
+        });
 
         button_MaxImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MaximizeButton.png"))); // NOI18N
         button_MaxImage2.setBorder(null);
@@ -556,6 +575,11 @@ public class MainWindow extends javax.swing.JFrame {
         button_XImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/XButton.png"))); // NOI18N
         button_XImage3.setBorder(null);
         button_XImage3.setOpaque(true);
+        button_XImage3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_XImage3ActionPerformed(evt);
+            }
+        });
 
         button_MaxImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MaximizeButton.png"))); // NOI18N
         button_MaxImage3.setBorder(null);
@@ -771,30 +795,55 @@ public class MainWindow extends javax.swing.JFrame {
         label_question1.setForeground(new java.awt.Color(255, 255, 255));
         label_question1.setText("When was the creation date of ");
 
+        buttonGroup_question1.add(radioButton_answer1_3);
         radioButton_answer1_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer1_3.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer1_3.setText("jRadioButton1");
+        radioButton_answer1_3.setText("answer choice 3");
+        radioButton_answer1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer1_3ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question1.add(radioButton_answer1_1);
         radioButton_answer1_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer1_1.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer1_1.setText("jRadioButton1");
+        radioButton_answer1_1.setText("answer choice 1");
+        radioButton_answer1_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer1_1ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question1.add(radioButton_answer1_2);
         radioButton_answer1_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer1_2.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer1_2.setText("jRadioButton1");
+        radioButton_answer1_2.setText("answer choice 2");
         radioButton_answer1_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 radioButton_answer1_2ActionPerformed(evt);
             }
         });
 
+        buttonGroup_question1.add(radioButton_answer1_4);
         radioButton_answer1_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer1_4.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer1_4.setText("jRadioButton1");
+        radioButton_answer1_4.setText("answer choice 4");
+        radioButton_answer1_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer1_4ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question1.add(radioButton_answer1_5);
         radioButton_answer1_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer1_5.setForeground(new java.awt.Color(255, 255, 255));
-        radioButton_answer1_5.setText("jRadioButton1");
+        radioButton_answer1_5.setText("answer choice 5");
+        radioButton_answer1_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer1_5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_question1Layout = new javax.swing.GroupLayout(panel_question1);
         panel_question1.setLayout(panel_question1Layout);
@@ -843,10 +892,17 @@ public class MainWindow extends javax.swing.JFrame {
         label_question2.setForeground(new java.awt.Color(255, 255, 255));
         label_question2.setText("Who was the creator of ");
 
+        buttonGroup_question2.add(radioButton_answer2_1);
         radioButton_answer2_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer2_1.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer2_1.setText("jRadioButton1");
+        radioButton_answer2_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer2_1ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question2.add(radioButton_answer2_2);
         radioButton_answer2_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer2_2.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer2_2.setText("jRadioButton1");
@@ -856,17 +912,35 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup_question2.add(radioButton_answer2_4);
         radioButton_answer2_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer2_4.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer2_4.setText("jRadioButton1");
+        radioButton_answer2_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer2_4ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question2.add(radioButton_answer2_5);
         radioButton_answer2_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer2_5.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer2_5.setText("jRadioButton1");
+        radioButton_answer2_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer2_5ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question2.add(radioButton_answer2_3);
         radioButton_answer2_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer2_3.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer2_3.setText("jRadioButton1");
+        radioButton_answer2_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer2_3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_question2Layout = new javax.swing.GroupLayout(panel_question2);
         panel_question2.setLayout(panel_question2Layout);
@@ -913,10 +987,17 @@ public class MainWindow extends javax.swing.JFrame {
         label_question3.setForeground(new java.awt.Color(255, 255, 255));
         label_question3.setText("What is the origin of ");
 
+        buttonGroup_question3.add(radioButton_answer3_1);
         radioButton_answer3_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer3_1.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer3_1.setText("jRadioButton1");
+        radioButton_answer3_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer3_1ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question3.add(radioButton_answer3_2);
         radioButton_answer3_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer3_2.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer3_2.setText("jRadioButton1");
@@ -926,17 +1007,35 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup_question3.add(radioButton_answer3_4);
         radioButton_answer3_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer3_4.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer3_4.setText("jRadioButton1");
+        radioButton_answer3_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer3_4ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question3.add(radioButton_answer3_5);
         radioButton_answer3_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer3_5.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer3_5.setText("jRadioButton1");
+        radioButton_answer3_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer3_5ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question3.add(radioButton_answer3_3);
         radioButton_answer3_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer3_3.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer3_3.setText("jRadioButton1");
+        radioButton_answer3_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer3_3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_question3Layout = new javax.swing.GroupLayout(panel_question3);
         panel_question3.setLayout(panel_question3Layout);
@@ -983,25 +1082,77 @@ public class MainWindow extends javax.swing.JFrame {
         label_question4.setForeground(new java.awt.Color(255, 255, 255));
         label_question4.setText("What is the name of the above piece?  ");
 
+        button_Submit.setBackground(new java.awt.Color(250, 203, 132));
+        button_Submit.setFont(new java.awt.Font("Cochin", 1, 24)); // NOI18N
+        button_Submit.setText("Submit");
+        button_Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_SubmitActionPerformed(evt);
+            }
+        });
+
+        buttonGroup_question4.add(radioButton_answer4_1);
         radioButton_answer4_1.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer4_1.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer4_1.setText("jRadioButton1");
+        radioButton_answer4_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer4_1ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question4.add(radioButton_answer4_2);
         radioButton_answer4_2.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer4_2.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer4_2.setText("jRadioButton1");
+        radioButton_answer4_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer4_2ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question4.add(radioButton_answer4_3);
         radioButton_answer4_3.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer4_3.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer4_3.setText("jRadioButton1");
+        radioButton_answer4_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer4_3ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question4.add(radioButton_answer4_4);
         radioButton_answer4_4.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer4_4.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer4_4.setText("jRadioButton1");
+        radioButton_answer4_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer4_4ActionPerformed(evt);
+            }
+        });
 
+        buttonGroup_question4.add(radioButton_answer4_5);
         radioButton_answer4_5.setFont(new java.awt.Font("Cochin", 1, 16)); // NOI18N
         radioButton_answer4_5.setForeground(new java.awt.Color(255, 255, 255));
         radioButton_answer4_5.setText("jRadioButton1");
+        radioButton_answer4_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButton_answer4_5ActionPerformed(evt);
+            }
+        });
+
+        panel_questionImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout panel_questionImageLayout = new javax.swing.GroupLayout(panel_questionImage);
+        panel_questionImage.setLayout(panel_questionImageLayout);
+        panel_questionImageLayout.setHorizontalGroup(
+            panel_questionImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+        );
+        panel_questionImageLayout.setVerticalGroup(
+            panel_questionImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout panel_question4Layout = new javax.swing.GroupLayout(panel_question4);
         panel_question4.setLayout(panel_question4Layout);
@@ -1011,26 +1162,39 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_question4Layout.createSequentialGroup()
-                        .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioButton_answer4_3, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panel_question4Layout.createSequentialGroup()
-                                .addComponent(radioButton_answer4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(91, 91, 91)
-                                .addComponent(radioButton_answer4_5, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(label_question4, javax.swing.GroupLayout.PREFERRED_SIZE, 1281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(33, Short.MAX_VALUE))
-                    .addGroup(panel_question4Layout.createSequentialGroup()
                         .addComponent(radioButton_answer4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(radioButton_answer4_4, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))))
+                        .addGap(33, 33, 33))
+                    .addGroup(panel_question4Layout.createSequentialGroup()
+                        .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panel_question4Layout.createSequentialGroup()
+                                .addComponent(radioButton_answer4_3, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(346, 346, 346)
+                                .addComponent(button_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_question4Layout.createSequentialGroup()
+                                .addComponent(radioButton_answer4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(91, 91, 91)
+                                .addComponent(radioButton_answer4_5, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(33, Short.MAX_VALUE))))
+            .addGroup(panel_question4Layout.createSequentialGroup()
+                .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_question4Layout.createSequentialGroup()
+                        .addGap(435, 435, 435)
+                        .addComponent(panel_questionImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_question4Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(label_question4, javax.swing.GroupLayout.PREFERRED_SIZE, 1281, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panel_question4Layout.setVerticalGroup(
             panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_question4Layout.createSequentialGroup()
-                .addContainerGap(246, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(panel_questionImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(label_question4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(33, 33, 33)
                 .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioButton_answer4_1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(radioButton_answer4_4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1038,30 +1202,26 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioButton_answer4_2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(radioButton_answer4_5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addComponent(radioButton_answer4_3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(33, 33, 33)
+                .addGroup(panel_question4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioButton_answer4_3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button_Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
 
         panel_quizScreen.add(panel_question4, "card5");
 
-        jLabel1.setText("DONEEEEEEEEEEEEE");
+        panel_results.setBackground(new java.awt.Color(99, 107, 47));
 
         javax.swing.GroupLayout panel_resultsLayout = new javax.swing.GroupLayout(panel_results);
         panel_results.setLayout(panel_resultsLayout);
         panel_resultsLayout.setHorizontalGroup(
             panel_resultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_resultsLayout.createSequentialGroup()
-                .addGap(536, 536, 536)
-                .addComponent(jLabel1)
-                .addContainerGap(698, Short.MAX_VALUE))
+            .addGap(0, 1366, Short.MAX_VALUE)
         );
         panel_resultsLayout.setVerticalGroup(
             panel_resultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_resultsLayout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(jLabel1)
-                .addContainerGap(344, Short.MAX_VALUE))
+            .addGap(0, 552, Short.MAX_VALUE)
         );
 
         panel_quizScreen.add(panel_results, "card6");
@@ -1107,16 +1267,14 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(button_backToMain1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
+            .addGroup(panel_quizLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(button_BackQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(label_creditsQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(495, 495, 495))
+                .addGap(230, 230, 230)
+                .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
             .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
                     .addContainerGap(57, Short.MAX_VALUE)
@@ -1130,13 +1288,16 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(label_MiniQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(button_backToMain1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 603, Short.MAX_VALUE)
-                .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_BackQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_creditsQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 615, Short.MAX_VALUE)
+                .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
+                        .addComponent(label_creditsQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
+                        .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(button_NextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button_BackQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17))))
             .addGroup(panel_quizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_quizLayout.createSequentialGroup()
                     .addContainerGap(138, Short.MAX_VALUE)
@@ -1471,26 +1632,8 @@ public class MainWindow extends javax.swing.JFrame {
                     dh.compileArtworks(userSelection);
                     artworks = dh.getArtworkList();
 
-                    String artworkSize = panel_ImageView1.getWidth() + 
-                            "," + panel_ImageView1.getHeight();
-                    String individualSize = panel_individualImage.getWidth() + 
-                            "," + panel_individualImage.getHeight();
-
-                    for (Artwork piece : artworks) {
-                        
-                        ImageHandler ih = new ImageHandler(piece);
-                        BufferedImage image = ih.getArtworkImage(artworkSize);
-                        BufferedImage mainImage = ih.getArtworkImage(individualSize);
-                
-                        imagePanels.add(image); 
-                        individualPanels.add(mainImage);
-                
-                        String label = piece.getTitle();
-                        if (label.length() >= 52) {
-                            label = label.substring(0, 52) + "...";
-                        }
-                        imageLabels.add(label);
-                    }
+                    setupImages();
+                    System.out.println(dh.toString());
 
                     return null;
                 }
@@ -1507,6 +1650,32 @@ public class MainWindow extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button_ProceedActionPerformed
 
+    private void setupImages() {
+        String artworkSize = panel_ImageView1.getWidth() + 
+                "," + panel_ImageView1.getHeight();
+        String individualSize = panel_individualImage.getWidth() + 
+                "," + panel_individualImage.getHeight();
+        
+        imagePanels.clear();
+        imageLabels.clear();
+        individualPanels.clear();
+
+        for (Artwork piece : artworks) {
+                        
+            ImageHandler ih = new ImageHandler(piece);
+            BufferedImage image = ih.getArtworkImage(artworkSize);
+            BufferedImage mainImage = ih.getArtworkImage(individualSize);
+                
+            imagePanels.add(image); 
+            individualPanels.add(mainImage);
+                
+            String label = piece.getTitle();
+            if (label.length() >= 52) {
+                label = label.substring(0, 52) + "...";
+            }
+            imageLabels.add(label);
+        }
+    }
     private void setup() {
         
             ((ImagePanel)panel_ImageView1).updateImage(imagePanels.get(4));
@@ -1552,10 +1721,13 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_button_backToMainActionPerformed
 
     private void button_regenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_regenerateActionPerformed
-        // TODO add your handling code here:
-        
+
+        for (Artwork piece: artworks) {
+            dh.rejectList(Integer.parseInt(piece.getId()));
+        }
         button_Proceed.setText("Proceed to Curated Art Pieces!");
         changePanel(panel_base, panel_welcome);
+        System.out.println(dh.toString());
         resetInformation();
 
     }//GEN-LAST:event_button_regenerateActionPerformed
@@ -1586,33 +1758,55 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void button_miniQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_miniQuizActionPerformed
         // TODO add your handling code here:
+        countQuiz++;
         
         changePanel(panel_base, panel_quiz);
-        String title;
-        quiz = new Quiz(artworks);
         
-        title = setOptions(0, options.indexOf(radioButton_answer1_1),
+        if (countQuiz == 1) {
+            String title;
+            quiz = new Quiz(artworks);
+        
+            title = setOptions(0, options.indexOf(radioButton_answer1_1),
                 options.indexOf(radioButton_answer1_5));
         
-        label_question1.setText("<html>" + "When was the creation date of " +
+            label_question1.setText("<html>" + "When was the creation date of " +
                 " <i>" + title + "</i>" + "?</html>");
 
-        title = setOptions(1, options.indexOf(radioButton_answer2_1),
+            title = setOptions(1, options.indexOf(radioButton_answer2_1),
                 options.indexOf(radioButton_answer2_5));
         
-        label_question2.setText("<html>" + "Who created " +
+            label_question2.setText("<html>" + "Who created " +
                 " <i>" + title + "</i>" + "?</html>");
                 
-        title = setOptions(2, options.indexOf(radioButton_answer3_1),
+            title = setOptions(2, options.indexOf(radioButton_answer3_1),
                 options.indexOf(radioButton_answer3_5));
         
-        label_question3.setText("<html>" + "Where was " +
+            label_question3.setText("<html>" + "Where was " +
                 " <i>" + title + "</i>" + " created?</html>");
         
-        setOptions(3, options.indexOf(radioButton_answer4_1),
+            setOptions(3, options.indexOf(radioButton_answer4_1),
                 options.indexOf(radioButton_answer4_5));
         
-        label_question4.setText("<html>" + "What is the title of the above piece?</html>");
+            label_question4.setText("<html>" + "What is the title of the above piece?</html>");
+            
+            button_BackQuestion.setVisible(false);
+            
+            for (int i = options.indexOf(radioButton_answer4_1); 
+                    i <= options.indexOf(radioButton_answer4_5); i++) {
+                (options.get(i)).setText("<html>" + "<i>" + 
+                        (options.get(i)).getText() + "</i>" + "</html>");
+            }
+            
+            Artwork correctFour = quiz.getQuestionFour();
+            ImageHandler image = new ImageHandler(correctFour);
+            String imageSize = panel_questionImage.getWidth() + 
+                            "," + panel_questionImage.getHeight();
+            BufferedImage fourthImage = image.getArtworkImage(imageSize);
+            
+            ((ImagePanel)panel_questionImage).updateImage(fourthImage);
+ 
+        }
+            
 
     }//GEN-LAST:event_button_miniQuizActionPerformed
 
@@ -1678,16 +1872,17 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void radioButton_answer1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer1_2ActionPerformed
-        // TODO add your handling code here:
+        
+        userPickAnswer(radioButton_answer1_2);
     }//GEN-LAST:event_radioButton_answer1_2ActionPerformed
 
     private void button_backToMain2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_backToMain2ActionPerformed
-
+        
         changePanel(panel_base, panel_mainScreen);
     }//GEN-LAST:event_button_backToMain2ActionPerformed
 
     private void button_MaxImage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_MaxImage1ActionPerformed
-
+        
         changePanel(panel_base, panel_individualScreen);
         int index = imagePanels.indexOf(((ImagePanel)panel_ImageView1).getImage());
         setIndividualScreen(index);
@@ -1732,21 +1927,21 @@ public class MainWindow extends javax.swing.JFrame {
     private void button_BackQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_BackQuestionActionPerformed
  
         if (panel_question2.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question1);
-            
+            button_backToMain1.setVisible(true);
+            buttonVisibility(panel_question1);
         } else if (panel_question3.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question2);
-            
+            button_backToMain1.setVisible(false);
+            buttonVisibility(panel_question2);
         } else if (panel_question4.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question3);
-            
+            button_backToMain1.setVisible(false);
+            buttonVisibility(panel_question3);
         } else if (panel_results.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question4);
-            
+            button_backToMain1.setVisible(false);
+            buttonVisibility(panel_question4);
         } 
         
     }//GEN-LAST:event_button_BackQuestionActionPerformed
@@ -1754,31 +1949,42 @@ public class MainWindow extends javax.swing.JFrame {
     private void button_NextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_NextQuestionActionPerformed
     
         if (panel_question1.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question2);
-            
+            button_backToMain1.setVisible(false);
+            buttonVisibility(panel_question2);
         } else if (panel_question2.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question3);
-            
+            button_backToMain1.setVisible(false);
+            buttonVisibility(panel_question3);
         } else if (panel_question3.isShowing()) {
-            
             changePanel(panel_quizScreen, panel_question4);
-            
+            button_backToMain1.setVisible(false);
+            buttonVisibility(panel_question4);
         } else if (panel_question4.isShowing()) {
-            
-            changePanel(panel_quizScreen, panel_results);
-            
+            buttonVisibility(panel_results);
         }
         
     }//GEN-LAST:event_button_NextQuestionActionPerformed
 
+    private void buttonVisibility(JPanel panel) {
+        if (panel.equals(panel_question1)) {
+            button_BackQuestion.setVisible(false);
+        } else {
+            button_BackQuestion.setVisible(true);
+        }
+        
+        if (panel.equals(panel_question4) | panel.equals(panel_results)) {
+            button_NextQuestion.setVisible(false);
+        } else {
+            button_NextQuestion.setVisible(true);
+        }
+    }
     private void radioButton_answer2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2_2ActionPerformed
-        // TODO add your handling code here:
+        userPickAnswer(radioButton_answer2_2);
     }//GEN-LAST:event_radioButton_answer2_2ActionPerformed
 
     private void radioButton_answer3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer3_2ActionPerformed
-        // TODO add your handling code here:
+        userPickAnswer(radioButton_answer3_2);
     }//GEN-LAST:event_radioButton_answer3_2ActionPerformed
 
     private void button_SaveDesktopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_SaveDesktopActionPerformed
@@ -1838,6 +2044,176 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_label_creditsQuizMouseClicked
 
+    private void replaceArtwork(JPanel panel, JLabel label) {
+        // Remove image on the UI immediately
+        int index = imagePanels.indexOf(((ImagePanel)panel).getImage());
+        Artwork individualPiece = artworks.get(index);
+        
+        ((ImagePanel)panel).removeImage();
+        label.setText("");
+
+        // Then do the heavy processing in a background thread
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+            BufferedImage image, mainImage;
+            String workLabel;
+    
+            @Override
+            protected Void doInBackground() throws Exception {
+                dh.rejectList(Integer.parseInt(individualPiece.getId()));
+        
+                ArrayList<String> filterValues = dh.getFilterValues();
+                ArrayList<String> newWork = dh.fetchArtwork(filterValues.get(index));
+                Artwork newPiece = dh.generateArtwork(newWork);
+                artworks.set(index, newPiece);
+        
+                //System.out.println(dh.toString());
+        
+                String artworkSize = panel_ImageView1.getWidth() + 
+                    "," + panel_ImageView1.getHeight();
+                String individualSize = panel_individualImage.getWidth() + 
+                    "," + panel_individualImage.getHeight();
+        
+                ImageHandler ih = new ImageHandler(newPiece);
+                image = ih.getArtworkImage(artworkSize);
+                mainImage = ih.getArtworkImage(individualSize);
+        
+                String rawLabel = newPiece.getTitle();
+                workLabel = rawLabel.length() >= 52 ? rawLabel.substring(0, 52) + "..." : rawLabel;
+
+                // Store images and label for updating in EDT later
+                imagePanels.set(index, image); 
+                individualPanels.set(index, mainImage);
+                imageLabels.set(index, workLabel);
+        
+                return null;
+            }
+
+            @Override
+            protected void done() {
+                try {
+                    get(); // Ensure exceptions are caught
+                    ((ImagePanel)panel).updateImage(imagePanels.get(index));
+                    label.setText(imageLabels.get(index));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        };
+
+        worker.execute();
+    }
+    private void button_XImage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_XImage1ActionPerformed
+        replaceArtwork(panel_ImageView1, label_LabelView1);
+        
+    }//GEN-LAST:event_button_XImage1ActionPerformed
+
+    private void radioButton_answer1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer1_1ActionPerformed
+        userPickAnswer(radioButton_answer1_1);
+    }//GEN-LAST:event_radioButton_answer1_1ActionPerformed
+
+    private void radioButton_answer1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer1_3ActionPerformed
+        userPickAnswer(radioButton_answer1_3);
+    }//GEN-LAST:event_radioButton_answer1_3ActionPerformed
+
+    private void radioButton_answer1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer1_4ActionPerformed
+        userPickAnswer(radioButton_answer1_4);
+    }//GEN-LAST:event_radioButton_answer1_4ActionPerformed
+
+    private void radioButton_answer1_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer1_5ActionPerformed
+        userPickAnswer(radioButton_answer1_5);
+    }//GEN-LAST:event_radioButton_answer1_5ActionPerformed
+
+    private void radioButton_answer2_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2_1ActionPerformed
+        userPickAnswer(radioButton_answer2_1);
+    }//GEN-LAST:event_radioButton_answer2_1ActionPerformed
+
+    private void radioButton_answer2_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2_4ActionPerformed
+        userPickAnswer(radioButton_answer2_4);
+    }//GEN-LAST:event_radioButton_answer2_4ActionPerformed
+
+    private void radioButton_answer2_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2_5ActionPerformed
+        userPickAnswer(radioButton_answer2_5);
+    }//GEN-LAST:event_radioButton_answer2_5ActionPerformed
+
+    private void radioButton_answer2_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer2_3ActionPerformed
+        userPickAnswer(radioButton_answer2_3);
+    }//GEN-LAST:event_radioButton_answer2_3ActionPerformed
+
+    private void radioButton_answer3_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer3_1ActionPerformed
+        userPickAnswer(radioButton_answer3_1);
+    }//GEN-LAST:event_radioButton_answer3_1ActionPerformed
+
+    private void radioButton_answer3_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer3_4ActionPerformed
+        userPickAnswer(radioButton_answer3_4);
+    }//GEN-LAST:event_radioButton_answer3_4ActionPerformed
+
+    private void radioButton_answer3_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer3_5ActionPerformed
+        userPickAnswer(radioButton_answer3_5);
+    }//GEN-LAST:event_radioButton_answer3_5ActionPerformed
+
+    private void radioButton_answer3_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer3_3ActionPerformed
+        userPickAnswer(radioButton_answer3_3);
+    }//GEN-LAST:event_radioButton_answer3_3ActionPerformed
+
+    private void radioButton_answer4_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer4_1ActionPerformed
+        userPickAnswer(radioButton_answer4_1);
+    }//GEN-LAST:event_radioButton_answer4_1ActionPerformed
+
+    private void radioButton_answer4_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer4_2ActionPerformed
+        userPickAnswer(radioButton_answer4_2);
+    }//GEN-LAST:event_radioButton_answer4_2ActionPerformed
+
+    private void radioButton_answer4_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer4_3ActionPerformed
+        userPickAnswer(radioButton_answer4_3);
+    }//GEN-LAST:event_radioButton_answer4_3ActionPerformed
+
+    private void radioButton_answer4_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer4_4ActionPerformed
+        userPickAnswer(radioButton_answer4_4);
+    }//GEN-LAST:event_radioButton_answer4_4ActionPerformed
+
+    private void radioButton_answer4_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButton_answer4_5ActionPerformed
+        userPickAnswer(radioButton_answer4_5);
+    }//GEN-LAST:event_radioButton_answer4_5ActionPerformed
+
+    private void button_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_SubmitActionPerformed
+        int buttonCount = 0;
+        
+        for (JRadioButton button: options) {
+            if (button.isSelected()) {
+                buttonCount++;
+            }
+        }
+        System.out.println(buttonCount);
+        
+        if (buttonCount == 4) {
+            changePanel(panel_quizScreen, panel_results);
+            button_backToMain1.setVisible(true);
+        } else {
+            button_Submit.setText("Please answer every question!");
+        }
+        
+    }//GEN-LAST:event_button_SubmitActionPerformed
+
+    private void button_XImage2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_XImage2ActionPerformed
+        replaceArtwork(panel_ImageView2, label_LabelView2);
+    }//GEN-LAST:event_button_XImage2ActionPerformed
+
+    private void button_XImage3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_XImage3ActionPerformed
+        replaceArtwork(panel_ImageView3, label_LabelView3);
+    }//GEN-LAST:event_button_XImage3ActionPerformed
+
+    private void userPickAnswer(JRadioButton option) {
+        if (option.isSelected()) {
+            userAnswers.add(option);
+        }
+        else if (!option.isSelected()) {
+            userAnswers.remove(userAnswers.indexOf(option));
+        }
+        for (JRadioButton thing: userAnswers) {
+            System.out.println(thing.getText());
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1874,6 +2250,10 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup_question1;
+    private javax.swing.ButtonGroup buttonGroup_question2;
+    private javax.swing.ButtonGroup buttonGroup_question3;
+    private javax.swing.ButtonGroup buttonGroup_question4;
     private javax.swing.JButton button_Back;
     private javax.swing.JButton button_BackQuestion;
     private javax.swing.JButton button_Instructions;
@@ -1884,6 +2264,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton button_NextQuestion;
     private javax.swing.JButton button_Proceed;
     private javax.swing.JButton button_SaveDesktop;
+    private javax.swing.JButton button_Submit;
     private javax.swing.JButton button_XImage1;
     private javax.swing.JButton button_XImage2;
     private javax.swing.JButton button_XImage3;
@@ -1904,7 +2285,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBox_Modernism;
     private javax.swing.JCheckBox checkBox_Photography;
     private javax.swing.JCheckBox checkBox_Pop;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel label_Africa;
     private javax.swing.JLabel label_Americas;
@@ -1954,6 +2334,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel panel_question2;
     private javax.swing.JPanel panel_question3;
     private javax.swing.JPanel panel_question4;
+    private javax.swing.JPanel panel_questionImage;
     private javax.swing.JPanel panel_quiz;
     private javax.swing.JPanel panel_quizScreen;
     private javax.swing.JPanel panel_results;

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.artistry2;
 
 import java.io.IOException;
@@ -16,16 +13,16 @@ import java.util.Collection;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/**
- *
- * @author advikarapolu
- */
 public class DataHandler {
     
     private ArrayList<Artwork> artworkList;
+    private ArrayList<Integer> rejectList;
+    private ArrayList<String> values;
 
     public DataHandler() {
         artworkList = new ArrayList<>();
+        rejectList = new ArrayList<>();
+        values = new ArrayList<>();
     }
     
     //code to retrieve data
@@ -99,7 +96,9 @@ public class DataHandler {
             boolean hasImage = artworkData.has("image_id") &&
                 !artworkData.isNull("image_id");
             
-            if (hasTitle && hasImage) {
+            int artID = artworkData.getInt("id");
+            
+            if (hasTitle && hasImage && !rejectList.contains(artID)) {
                 
                 artworkDetails.add(Integer.toString(artworkData.getInt("id")));
                 artworkDetails.add(artworkData.getString("title"));
@@ -140,7 +139,7 @@ public class DataHandler {
         artworkList.clear();
         
         //retrieving a random artwork for each userSelection
-        ArrayList<String> values = new ArrayList<>();
+        values = new ArrayList<>();
         
         Collection<String> items = userSelection.getFilters().values();
         
@@ -165,6 +164,7 @@ public class DataHandler {
                 ArrayList<String> artworkDeets = new ArrayList<>();
                 String filter = values.get(getRandomNumber(0, values.size()));
                 artworkDeets = fetchArtwork(filter);
+                values.add(filter);
             
                 artworkList.add(generateArtwork(artworkDeets));
                 count += 1;
@@ -173,9 +173,34 @@ public class DataHandler {
         }
     }
     
+    public void rejectList(int artworkID) {
+        
+        rejectList.add(artworkID);
+        if (rejectList.size() >= 50) {
+            rejectList.clear();
+        }
+        
+        
+    }
+    
+    public String toString() {
+        String output = "";
+        for (Artwork work: artworkList) {
+            output += work.getTitle() + "\n";
+        }
+        for (String filter: values) {
+            output += filter + "\n";
+        }
+        return output;
+    }
     
     public ArrayList<Artwork> getArtworkList() {
         return artworkList;
     }
+    
+    public ArrayList<String> getFilterValues() {
+        return values;
+    }
+    
 
 }
