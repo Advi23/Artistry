@@ -96,9 +96,12 @@ public class DataHandler {
             boolean hasImage = artworkData.has("image_id") &&
                 !artworkData.isNull("image_id");
             
+            boolean hasOrigin = artworkData.has("place_of_origin") &&
+                    !artworkData.isNull("place_of_origin");
+            
             int artID = artworkData.getInt("id");
             
-            if (hasTitle && hasImage && !rejectList.contains(artID)) {
+            if (hasTitle && hasImage && !rejectList.contains(artID) && hasOrigin) {
                 
                 artworkDetails.add(Integer.toString(artworkData.getInt("id")));
                 artworkDetails.add(artworkData.getString("title"));
@@ -181,17 +184,6 @@ public class DataHandler {
         }
         
         
-    }
-    
-    public String toString() {
-        String output = "";
-        for (Artwork work: artworkList) {
-            output += work.getTitle() + "\n";
-        }
-        for (String filter: values) {
-            output += filter + "\n";
-        }
-        return output;
     }
     
     public ArrayList<Artwork> getArtworkList() {

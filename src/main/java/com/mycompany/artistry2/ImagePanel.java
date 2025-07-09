@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.artistry2;
 
 import java.awt.Font;
@@ -10,10 +7,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
-/**
- *
- * @author advikarapolu
- */
 public class ImagePanel extends JPanel {
     
     private BufferedImage currentImage;
@@ -48,8 +41,6 @@ public class ImagePanel extends JPanel {
 
             int x = (getWidth() - stringWidth) / 2;
             int y = (getHeight() + stringHeight) / 2;
-
-            //g.setColor(Color.GRAY);
             g.drawString(message, x, y);
         }
         

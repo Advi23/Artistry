@@ -15,12 +15,10 @@ public class Quiz {
     private ArrayList<Artwork> artworks;
     private ArrayList<Question> questions;
     private ArrayList<String> options;
-    private int score;
-    
+
     public Quiz(ArrayList<Artwork> works) {
         artworks = works;
         questions = new ArrayList<>();
-        score = 0;
         options = new ArrayList<>();
         generateQuestions();
     }
@@ -33,15 +31,8 @@ public class Quiz {
         return (questions.get(3)).getCorrectPiece();
     }
 
-    public int getScore() {
-        return score;
-    }
-    
     public boolean evaluateAnswer(Question q, String userAnswer) {
         boolean rightAnswer = q.getCorrectAnswer().equals(userAnswer);
-        if (rightAnswer) {
-            score++;
-        }
         return rightAnswer;
     }
     

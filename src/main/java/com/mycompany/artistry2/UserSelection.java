@@ -44,12 +44,5 @@ public class UserSelection {
         return filters;
     }
     
-    public String toString() {
-        String output = "";
-        for (String value: filters.values()) {
-            output += value + "\n";
-        }
-        return output;
-    }
     
 }

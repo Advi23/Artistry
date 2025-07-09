@@ -49,15 +49,5 @@ public class Artwork {
     public String getImage_id() {
         return image_id;
     }
-
-    public String getArtworkDetails() {
-        
-        String output = "";
-        
-        output += getId() + "\n" + getTitle() + "\n" + getDate_created() + "\n"
-                + getArtist() + "\n" + getPlace_created() + "\n" + getShort_description();
-        
-        return output;
-    }
     
 }
