@@ -43,9 +43,7 @@ public class ImagePanel extends JPanel {
             int y = (getHeight() + stringHeight) / 2;
             g.drawString(message, x, y);
         }
-        
-        
-        
+         
     }
     
 }

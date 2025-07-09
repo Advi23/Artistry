@@ -1655,8 +1655,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_checkBox_MiniatureActionPerformed
 
     private void button_ProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_ProceedActionPerformed
-        // TODO add your handling code here:
-        
+
         if (checkBoxesFilled != 0 && checkBoxesFilled <= 5) {
             button_Proceed.setText("Loading...");
     
@@ -1689,6 +1688,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_button_ProceedActionPerformed
 
     private void setupImages() {
+        
         String artworkSize = panel_ImageView1.getWidth() + 
                 "," + panel_ImageView1.getHeight();
         String individualSize = panel_individualImage.getWidth() + 
@@ -1714,6 +1714,7 @@ public class MainWindow extends javax.swing.JFrame {
             imageLabels.add(label);
         }
     }
+    
     private void setup() {
         
             ((ImagePanel)panel_ImageView1).updateImage(imagePanels.get(4));
@@ -1749,12 +1750,10 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void button_InstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_InstructionsActionPerformed
-        // TODO add your handling code here:
         changePanel(panel_base, panel_Instructions);
     }//GEN-LAST:event_button_InstructionsActionPerformed
 
     private void button_backToMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_backToMainActionPerformed
-        // TODO add your handling code here:
         changePanel(panel_base, panel_mainScreen);
     }//GEN-LAST:event_button_backToMainActionPerformed
 
@@ -1795,7 +1794,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_button_backToMain1ActionPerformed
 
     private void button_miniQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_miniQuizActionPerformed
-        // TODO add your handling code here:
+        
         countQuiz++;
         
         changePanel(panel_base, panel_quiz);
@@ -1858,7 +1857,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_NextActionPerformed
-        // TODO add your handling code here:
+        
         countClicks += 1;
         
         photoCarousel(panel_ImageView1, panel_ImageView2, panel_ImageView3,
@@ -1867,7 +1866,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_button_NextActionPerformed
 
     private void button_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_BackActionPerformed
-        // TODO add your handling code here:
+       
         countClicks -= 1;
         
         photoCarousel(panel_ImageView1, panel_ImageView2, panel_ImageView3,
