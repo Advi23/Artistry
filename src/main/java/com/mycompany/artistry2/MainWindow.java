@@ -727,7 +727,7 @@ public class MainWindow extends javax.swing.JFrame {
         textArea_instructions.setFont(new java.awt.Font("Cochin", 1, 18)); // NOI18N
         textArea_instructions.setForeground(new java.awt.Color(255, 255, 255));
         textArea_instructions.setRows(5);
-        textArea_instructions.setText("\t\t\n\t\n\n\n\t           \n       \t               You are currently viewing the 5 pieces selected from the options you selected. A quick overview of available options:\n\n\t\t\t        Click on the ‘X’ at the top-right corner of each work to replace it\n\n\t\t\t          Click ‘Regenerate all works’ to view a completely new selection\n\t\t\t\n\t\t                           Click ‘Proceed to mini-quiz’ to test your knowledge on the selected works\n\n\t\t                       Click the ‘maximize’ button at the top-left corner to view the artwork’s details");
+        textArea_instructions.setText("\t\t\n\t\n\n\n\t           \n       \t               You are currently viewing the 5 pieces selected from the options you selected. A quick overview of available options:\n\n\t\t\t        Click on the ‘X’ at the top-right corner of each work to replace it\n\n\t\t\t          Click ‘Regenerate all works’ to view a completely new selection\n\t\t\t\n\t\t                           Click ‘Proceed to mini-quiz’ to test your knowledge on the selected works\n\n\t\t                       Click the ‘maximize’ button at the top-left corner to view the artwork’s details\n\n\t\t    On the Mini Quiz, don't worry if you see 2 answer choices that are the same. You can pick either one :).\n");
         scrollPane_instructions.setViewportView(textArea_instructions);
 
         javax.swing.GroupLayout panel_InstructionsLayout = new javax.swing.GroupLayout(panel_Instructions);
@@ -1766,6 +1766,10 @@ public class MainWindow extends javax.swing.JFrame {
         changePanel(panel_base, panel_welcome);
         System.out.println(dh.toString());
         countQuiz = 0;
+        for (JRadioButton option: options) {
+            option.setEnabled(true);
+            option.setForeground(Color.WHITE);
+        }
         resetInformation();
 
     }//GEN-LAST:event_button_regenerateActionPerformed
