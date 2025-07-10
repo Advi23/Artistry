@@ -19,6 +19,10 @@ Welcome! **_Artistry_** is an educational and recreational app built in Java des
 
 While this is a main overview of my application, I've also included multiple files in the [/docs](https://github.com/Advi23/Artistry/tree/master/docs) folder that outline my detailed process while developing, from setting up this repository to accessing the API. Feel free to explore this page, and thanks for visiting!!
 
+# Use
+
+Currently, _Artistry_ is only available for Mac users. [Download the macOS installer here (.dmg)](https://github.com/Advi23/Artistry/releases/tag/v1.0.0).
+
 # License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
